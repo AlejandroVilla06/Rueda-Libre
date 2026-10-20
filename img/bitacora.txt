@@ -1,0 +1,26 @@
+Paso 4: Petición del documento
+
+Request URL:http://127.0.0.1:3000/rueda-libre/index.html?vscode-livepreview=true
+Protocolo: http
+Host: 127.0.0.1
+Puerto: 3000
+Ruta:/rueda-libre/index.html
+Metodo: GET
+Codigo de estado: 200 OK
+
+Paso 5:Ruta inexistente 
+Request URL: http://127.0.0.1:3000/promociones.html
+Request Method: GET
+Status Code: 404 Not Found
+Remote Address: 127.0.0.1:3000
+
+Paso 6: Rol de HTML, CSS y JavaScript
+
+HTML: Define la estructura y el contenido de la página.
+Ejemplo: El <h1>Rueda Libre</h1> muestra el nombre del negocio.
+
+CSS: Controla la apariencia y los estilos visuales.
+Ejemplo: Cambiar el color de fondo del sitio o la tipografía.
+
+JavaScript: Agrega interactividad y comportamiento dinámico.
+Ejemplo: Mostrar un mensaje de bienvenida al hacer clic en un botón.
