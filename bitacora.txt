@@ -24,3 +24,16 @@ Ejemplo: Cambiar el color de fondo del sitio o la tipografía.
 
 JavaScript: Agrega interactividad y comportamiento dinámico.
 Ejemplo: Mostrar un mensaje de bienvenida al hacer clic en un botón.
+
+
+Tabla de rutas relativas:
+
+index.html → tarifas.html → paginas/tarifas.html
+index.html → reservas.html → paginas/reservas.html
+index.html → recorridos → paginas/tarifas.html#recorridos
+index.html → reservar → paginas/reservas.html
+tarifas.html → inicio → ../index.html
+tarifas.html → reservas → reservas.html
+tarifas.html → reservar → reservas.html
+reservas.html → inicio → ../index.html
+reservas.html → tarifas → tarifas.html
