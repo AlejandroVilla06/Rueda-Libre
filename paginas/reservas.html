@@ -21,7 +21,28 @@
         <section>
             <h2>Reserva tu bicicleta</h2>
 
-            <p>Escribinos a <a href="mailto:hola@ruedalibre.com">hola@ruedalibre.com</a> para reservar.</p>
+            <form>
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre">
+
+                <label for="correo">Correo electrónico</label>
+                <input type="email" id="correo" name="correo">
+
+                <label for="fecha">Fecha de reserva</label>
+                <input type="date" id="fecha" name="fecha">
+
+                <label for="tipo">Tipo de bicicleta</label>
+                <select id="tipo" name="tipo">
+                    <option value="">Seleccioná una opción</option>
+                    <option value="urbana">Urbana</option>
+                    <option value="montana">Montaña</option>
+                    <option value="electrica">Eléctrica</option>
+                </select>
+
+                <button type="submit">Reservar</button>
+            </form>
+
+
         </section>
         
         <section>
