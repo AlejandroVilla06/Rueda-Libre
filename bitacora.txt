@@ -89,3 +89,38 @@ Con border-box:
 
 Conclusión: border-box es más predecible para maquetar. Por eso se aplica
 con *, *::before, *::after { box-sizing: border-box; } a todos los elementos.
+
+
+MiniReto 12 — Posicionamiento y lanzamiento v1.0
+
+Etiqueta "Nuevo":
+  Se usa position: relative en la tarjeta para convertirla en punto de
+  referencia. Luego position: absolute en la etiqueta para anclarla a la
+  esquina superior derecha (top + right) sin desplazar el contenido.
+
+WhatsApp flotante:
+  Se usa position: fixed para que el enlace quede anclado a la ventana
+  del navegador (bottom + right), no al documento. Así se ve siempre
+  visible al hacer scroll.
+
+Los tres tipos de position usados:
+  relative — el elemento se queda en su lugar pero sirve de referencia
+  absolute — sale del flujo y se posiciona respecto a su padre relative
+  fixed — sale del flujo y se posiciona respecto a la ventana
+
+
+Resumen de la semana — MiniRetos 5 a 12
+
+MR5: Estructura semántica (header, nav, main, section, aside, footer)
+MR6: Formulario de reservas con labels y campos asociados (for + id)
+MR7: Validación nativa con required
+MR8: Auditoría Lighthouse (100/100/100/100) y publicación en GitHub Pages
+MR9: Variables CSS (:root), tipografía con Google Fonts, escala de spacing
+MR10: Selectores, especificidad (ID > clase), pseudoclases :hover y :focus
+MR11: Box model, border-box, tarjetas, tablas, formulario ordenado
+MR12: Posicionamiento (relative, absolute, fixed), consolidación y v1.0
+
+Qué mejoraría:
+  - Agregar más contenido visual (fotos de cada tipo de bicicleta)
+  - Responsive design (se verá en semana 2 con Flexbox y Grid)
+  - Mejorar la accesibilidad del formulario con mensajes de error claros

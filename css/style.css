@@ -1,4 +1,6 @@
-/* 1. box-sizing para TODOS los elementos: el ancho incluye padding y border */
+/* ========================
+   1. RESET Y VARIABLES
+   ======================== */
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -18,10 +20,15 @@
     --espacio-lg: 2rem;
 }
 
+/* ========================
+   2. BASE
+   ======================== */
 body {
     font-family: var(--fuente-cuerpo);
     color: var(--color-texto);
     background-color: var(--color-fondo);
+    margin: 0;
+    padding-bottom: var(--espacio-lg);
 }
 
 h1, h2, h3 {
@@ -29,8 +36,41 @@ h1, h2, h3 {
     color: var(--color-primario);
 }
 
-/* --- Nav --- */
+/* ========================
+   3. LAYOUT
+   ======================== */
+header {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: var(--espacio-md);
+}
+
+main {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: var(--espacio-md);
+}
+
+footer {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: var(--espacio-md);
+    text-align: center;
+}
+
+.portada {
+    min-height: 60vh;
+}
+
+/* ========================
+   4. NAVEGACION
+   ======================== */
+#menu {
+    display: inline-block;
+}
+
 #menu a {
+    display: inline-block;
     color: var(--color-texto);
     text-decoration: none;
     padding: var(--espacio-sm);
@@ -50,27 +90,76 @@ h1, h2, h3 {
     font-weight: 600;
 }
 
-/* --- CTA button --- */
-.btn-cta {
-    display: inline-block;
+/* ========================
+   5. TARJETAS
+   ======================== */
+.tarjeta {
+    border: 1px solid var(--color-secundario);
+    border-radius: 8px;
+    padding: var(--espacio-md);
+    margin-bottom: var(--espacio-lg);
+}
+
+.tarjeta img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+/* position: relative convierte a la tarjeta en "punto de referencia"
+   para que la etiqueta "Nuevo" se posicione DENTRO de ella */
+.tarjeta-destacada {
+    position: relative;
+}
+
+/* position: absolute saca la etiqueta del flujo normal y la ancla
+   a la esquina superior derecha de su padre (la tarjeta) */
+.etiqueta-nuevo {
+    position: absolute;
+    top: var(--espacio-sm);
+    right: var(--espacio-sm);
     background-color: var(--color-primario);
     color: #fff;
-    padding: var(--espacio-sm) var(--espacio-md);
-    text-decoration: none;
+    padding: 0.25rem var(--espacio-sm);
     border-radius: 4px;
+    font-size: 0.85rem;
     font-weight: 600;
 }
 
-.btn-cta:hover {
-    background-color: var(--color-acento);
+/* ========================
+   6. TABLAS
+   ======================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: var(--espacio-lg);
 }
 
-.btn-cta:focus {
-    outline: 2px solid var(--color-acento);
-    outline-offset: 2px;
+th, td {
+    padding: var(--espacio-sm);
+    border: 1px solid var(--color-secundario);
+    text-align: left;
 }
 
-/* --- Form fields --- */
+thead th {
+    background-color: var(--color-primario);
+    color: #fff;
+}
+
+/* ========================
+   7. FORMULARIO
+   ======================== */
+form label {
+    display: block;
+    margin-bottom: var(--espacio-sm);
+    margin-top: var(--espacio-md);
+    font-weight: 600;
+}
+
+form input, form select {
+    width: 100%;
+    display: block;
+}
+
 input, select {
     padding: var(--espacio-sm);
     border: 1px solid var(--color-texto);
@@ -101,82 +190,55 @@ button[type="submit"]:focus {
     outline-offset: 2px;
 }
 
-/* --- 2. Contenedor principal centrado --- */
-main {
-    max-width: 60rem;
-    margin: 0 auto;
-    padding: var(--espacio-md);
-}
-
-header {
-    max-width: 60rem;
-    margin: 0 auto;
-    padding: var(--espacio-md);
-}
-
-footer {
-    max-width: 60rem;
-    margin: 0 auto;
-    padding: var(--espacio-md);
-    text-align: center;
-}
-
-/* --- 2b. Portada con altura mínima --- */
-.portada {
-    min-height: 60vh;
-}
-
-/* --- 3. Tarjetas de servicios --- */
-.tarjeta {
-    border: 1px solid var(--color-secundario);
-    border-radius: 8px;
-    padding: var(--espacio-md);
-    margin-bottom: var(--espacio-lg);
-}
-
-.tarjeta img {
-    width: 100%;
-    border-radius: 4px;
-}
-
-/* --- 4. Tablas legibles --- */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: var(--espacio-lg);
-}
-
-th, td {
-    padding: var(--espacio-sm);
-    border: 1px solid var(--color-secundario);
-    text-align: left;
-}
-
-thead th {
-    background-color: var(--color-primario);
-    color: #fff;
-}
-
-/* --- 5. Formulario ordenado --- */
-form label {
-    display: block;
-    margin-bottom: var(--espacio-sm);
-    margin-top: var(--espacio-md);
-    font-weight: 600;
-}
-
-form input, form select {
-    width: 100%;
-    display: block;
-}
-
 form button[type="submit"] {
     margin-top: var(--espacio-lg);
     padding: var(--espacio-sm) var(--espacio-lg);
 }
 
-/* --- 6. Menú en fila --- */
-#menu {
-    display: flex;
-    gap: var(--espacio-sm);
+/* ========================
+   8. BOTONES CTA
+   ======================== */
+.btn-cta {
+    display: inline-block;
+    background-color: var(--color-primario);
+    color: #fff;
+    padding: var(--espacio-sm) var(--espacio-md);
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.btn-cta:hover {
+    background-color: var(--color-acento);
+}
+
+.btn-cta:focus {
+    outline: 2px solid var(--color-acento);
+    outline-offset: 2px;
+}
+
+/* ========================
+   9. WHATSAPP FLOTANTE
+   ======================== */
+/* position: fixed lo saca del flujo y lo ancla a la ventana,
+   no al documento. Se queda visible al hacer scroll */
+.btn-whatsapp {
+    position: fixed;
+    bottom: var(--espacio-lg);
+    right: var(--espacio-lg);
+    background-color: #25D366;
+    color: #fff;
+    padding: var(--espacio-sm) var(--espacio-md);
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn-whatsapp:hover {
+    background-color: #1DA851;
+}
+
+.btn-whatsapp:focus {
+    outline: 2px solid var(--color-acento);
+    outline-offset: 2px;
 }
