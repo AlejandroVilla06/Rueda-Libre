@@ -54,3 +54,18 @@ El <p> muestra #212121 heredado de body, donde se definió con var(--color-texto
 Propiedad no heredada: display
 El <p> tiene display: block, pero viene del user agent stylesheet (estilos
 por defecto del navegador), no del padre. No dice "Inherited from".
+
+
+MiniReto 10 — Conflicto de especificidad
+
+Selectores en conflicto:
+  #menu a       → especificidad (1, 0, 1) — un ID + un elemento
+  .activo       → especificidad (0, 1, 0) — una clase
+
+Problema: #menu a tiene mayor especificidad que .activo, por eso el color
+de .activo aparecía tachado en DevTools y no se aplicaba. El enlace activo
+seguía mostrando el color de #menu a (#212121) en vez del verde (#2E7D32).
+
+Solución: cambiar el selector a #menu a.activo, que tiene especificidad
+(1, 1, 1) — un ID + una clase + un elemento. Así le gana a #menu a sin
+necesidad de usar !important ni estilos en línea.
