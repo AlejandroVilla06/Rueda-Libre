@@ -1,0 +1,25 @@
+:root {
+    --color-primario: #2E7D32;
+    --color-secundario:#81C784;
+    --color-fondo: #FAFAFA;
+    --color-texto: #212121;
+    --color-acento: #1565C0;
+
+    --fuente-titulos: 'Montserrat', sans-serif;
+    --fuente-cuerpo: 'Open Sans', sans-serif;
+
+    --espacio-sm: 0.5rem;
+    --espacio-md: 1rem;
+    --espacio-lg: 2rem;
+}
+
+body {
+    font-family: var(--fuente-cuerpo);
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+}
+
+h1, h2, h3 {
+    font-family: var(--fuente-titulos);
+    color: var(--color-primario);
+}
