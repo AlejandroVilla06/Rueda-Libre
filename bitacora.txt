@@ -37,3 +37,20 @@ tarifas.html → reservas → reservas.html
 tarifas.html → reservar → reservas.html
 reservas.html → inicio → ../index.html
 reservas.html → tarifas → tarifas.html
+
+
+MiniReto 9 — DevTools: propiedades heredadas vs no heredadas
+
+Elemento inspeccionado: <p> dentro de <header> en index.html
+
+Propiedad heredada: font-family
+El <p> no tiene font-family declarado, pero muestra "Open Sans", sans-serif
+porque lo hereda de body, donde se definió con var(--fuente-cuerpo).
+En DevTools aparece como "Inherited from body".
+
+Propiedad heredada: color
+El <p> muestra #212121 heredado de body, donde se definió con var(--color-texto).
+
+Propiedad no heredada: display
+El <p> tiene display: block, pero viene del user agent stylesheet (estilos
+por defecto del navegador), no del padre. No dice "Inherited from".
