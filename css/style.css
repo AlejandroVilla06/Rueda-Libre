@@ -1,3 +1,8 @@
+/* 1. box-sizing para TODOS los elementos: el ancho incluye padding y border */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 :root {
     --color-primario: #2E7D32;
     --color-secundario:#81C784;
@@ -94,4 +99,84 @@ button[type="submit"]:hover {
 button[type="submit"]:focus {
     outline: 2px solid var(--color-acento);
     outline-offset: 2px;
+}
+
+/* --- 2. Contenedor principal centrado --- */
+main {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: var(--espacio-md);
+}
+
+header {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: var(--espacio-md);
+}
+
+footer {
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: var(--espacio-md);
+    text-align: center;
+}
+
+/* --- 2b. Portada con altura mínima --- */
+.portada {
+    min-height: 60vh;
+}
+
+/* --- 3. Tarjetas de servicios --- */
+.tarjeta {
+    border: 1px solid var(--color-secundario);
+    border-radius: 8px;
+    padding: var(--espacio-md);
+    margin-bottom: var(--espacio-lg);
+}
+
+.tarjeta img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+/* --- 4. Tablas legibles --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: var(--espacio-lg);
+}
+
+th, td {
+    padding: var(--espacio-sm);
+    border: 1px solid var(--color-secundario);
+    text-align: left;
+}
+
+thead th {
+    background-color: var(--color-primario);
+    color: #fff;
+}
+
+/* --- 5. Formulario ordenado --- */
+form label {
+    display: block;
+    margin-bottom: var(--espacio-sm);
+    margin-top: var(--espacio-md);
+    font-weight: 600;
+}
+
+form input, form select {
+    width: 100%;
+    display: block;
+}
+
+form button[type="submit"] {
+    margin-top: var(--espacio-lg);
+    padding: var(--espacio-sm) var(--espacio-lg);
+}
+
+/* --- 6. Menú en fila --- */
+#menu {
+    display: flex;
+    gap: var(--espacio-sm);
 }

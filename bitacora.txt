@@ -69,3 +69,23 @@ seguía mostrando el color de #menu a (#212121) en vez del verde (#2E7D32).
 Solución: cambiar el selector a #menu a.activo, que tiene especificidad
 (1, 1, 1) — un ID + una clase + un elemento. Así le gana a #menu a sin
 necesidad de usar !important ni estilos en línea.
+
+
+MiniReto 11 — Box model: medición de tarjeta con box-sizing
+
+Elemento medido: .tarjeta (primer servicio en index.html)
+
+Sin border-box (content-box, valor por defecto):
+  width declarado: no tiene (ocupa el 100% del padre)
+  padding: 1rem (16px por lado)
+  border: 1px por lado
+  Ancho total = ancho del contenido + 32px de padding + 2px de borde
+  El elemento se desborda si el padre ya ocupa todo el ancho disponible.
+
+Con border-box:
+  El padding y el borde se incluyen DENTRO del ancho declarado.
+  Ancho total = el ancho que le asignás, sin sorpresas.
+  No se desborda.
+
+Conclusión: border-box es más predecible para maquetar. Por eso se aplica
+con *, *::before, *::after { box-sizing: border-box; } a todos los elementos.
