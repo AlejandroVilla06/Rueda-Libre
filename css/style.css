@@ -75,6 +75,15 @@ footer {
 
 .portada {
     min-height: 60vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--espacio-lg);
+    align-items: center;
+}
+
+.portada img {
+    width: 100%;
+    border-radius: 8px;
 }
 
 /* ========================
@@ -144,6 +153,28 @@ footer {
 }
 
 /* ========================
+   5a. RUTAS (GRID)
+   ======================== */
+.rutas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--espacio-lg);
+}
+
+.rutas h2 {
+    grid-column: 1 / -1;
+}
+
+.ruta {
+    text-align: center;
+}
+
+.ruta img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* ========================
    5b. FLOTA (GRID)
    ======================== */
 .flota {
@@ -197,6 +228,31 @@ th, td {
 thead th {
     background-color: var(--color-primario);
     color: #fff;
+}
+
+/* ========================
+   6b. RESERVAS LAYOUT (GRID)
+   ======================== */
+.reservas-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--espacio-lg);
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: var(--espacio-md);
+}
+
+.reservas-contacto {
+    padding: var(--espacio-md);
+}
+
+.fila-campos {
+    display: flex;
+    gap: var(--espacio-md);
+}
+
+.fila-campos > div {
+    flex: 1;
 }
 
 /* ========================
