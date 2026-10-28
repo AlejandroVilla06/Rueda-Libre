@@ -124,3 +124,30 @@ Qué mejoraría:
   - Agregar más contenido visual (fotos de cada tipo de bicicleta)
   - Responsive design (se verá en semana 2 con Flexbox y Grid)
   - Mejorar la accesibilidad del formulario con mensajes de error claros
+
+
+Semana 2 — Día 1
+
+MR4 — Rueda Libre v1.5: mobile-first
+
+Verificación DevTools — Columnas de la flota en modo dispositivo:
+  La flota usa grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)),
+  por lo que el número de columnas depende del ancho disponible:
+
+  1280px: 3 columnas
+  900px:  3 columnas
+  400px:  1 columna
+
+Cambios mobile-first aplicados:
+  - Base (mobile): header y footer en flex-direction: column, portada sin
+    grid, rutas en 1 columna, reservas sin grid, tablas compactas (padding
+    reducido, font-size 0.85rem), imágenes fluidas (max-width: 100%)
+  - 768px (tablet): header/footer vuelven a row con space-between, portada
+    en grid 1fr 1fr, rutas en 3 columnas, reservas en grid 2fr 1fr, tablas
+    con padding y font-size normales
+  - 1200px (escritorio): portada con min-height: 60vh
+
+Enfoque: se escribió primero el CSS para la pantalla más chica y se fueron
+sumando reglas con min-width para pantallas más grandes. Esto es mobile-first:
+el diseño base es el móvil y se expande, en vez de escribir para escritorio
+y reducir con max-width.
