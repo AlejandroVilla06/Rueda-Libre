@@ -151,3 +151,40 @@ Enfoque: se escribió primero el CSS para la pantalla más chica y se fueron
 sumando reglas con min-width para pantallas más grandes. Esto es mobile-first:
 el diseño base es el móvil y se expande, en vez de escribir para escritorio
 y reducir con max-width.
+
+
+Semana 2 — Día 2
+
+MR5 — La flota en Bootstrap: primera comparación
+
+Archivo: pruebas/catalogo-bootstrap.html
+
+Distribución con la grilla de Bootstrap (col-12 col-sm-6 col-lg-4 col-xl-3):
+  < 576px (base):  1 columna  → col-12 (ocupa las 12 de 12)
+  >= 576px (sm):   2 columnas → col-sm-6 (ocupa 6 de 12)
+  >= 992px (lg):   3 columnas → col-lg-4 (ocupa 4 de 12)
+  >= 1200px (xl):  4 columnas → col-xl-3 (ocupa 3 de 12)
+
+Comparativa CSS propio vs Bootstrap:
+  CSS propio (v1.5):
+    - La flota usaba grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
+    - Responsive "automático" por auto-fit, pero sin control preciso de los
+      breakpoints (el navegador decide cuántas columnas caben)
+    - ~8 líneas de CSS para la distribución (.flota + media queries)
+
+  Bootstrap:
+    - Distribución resuelta con clases en el HTML: col-12, col-sm-6, col-lg-4, col-xl-3
+    - 0 líneas de CSS de distribución (todo en clases utilitarias)
+    - Control exacto de cuántas columnas en cada breakpoint
+    - Los gutters (g-4) reemplazan el gap de CSS Grid
+
+  Qué da Bootstrap sin esfuerzo: breakpoints predefinidos, gutters, container
+  centrado con max-width automático, sistema de 12 columnas consistente.
+
+  Qué control se pierde: el auto-fit de CSS Grid se adaptaba solo a cualquier
+  ancho sin definir breakpoints; con Bootstrap hay que elegir explícitamente
+  cuántas columnas en cada breakpoint.
+
+  Conclusión: Bootstrap es más rápido para armar layouts conocidos (1-2-3-4
+  columnas), pero CSS Grid con auto-fit es más flexible cuando no sabés de
+  antemano cuántas columnas querés.
