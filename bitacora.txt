@@ -188,3 +188,53 @@ Comparativa CSS propio vs Bootstrap:
   Conclusión: Bootstrap es más rápido para armar layouts conocidos (1-2-3-4
   columnas), pero CSS Grid con auto-fit es más flexible cuando no sabés de
   antemano cuántas columnas querés.
+
+
+MR6 — Sin una línea de CSS: utilidades
+
+Archivo: pruebas/catalogo-bootstrap.html (sección "¿Por qué Rueda Libre?" + banner CTA)
+
+Regla: cero <style>, cero style="", cero clases propias. Todo resuelto con
+clases utilitarias de Bootstrap.
+
+5 clases utilitarias encontradas en la documentación de Bootstrap:
+
+  1. text-bg-{color} (ej. text-bg-success)
+     Atajo de componente que aplica background-color Y color de texto con
+     contraste accesible en una sola clase. Docs: Color & background.
+
+  2. object-fit-cover
+     Equivalente a object-fit: cover en CSS. Hace que una imagen llene su
+     contenedor recortando en vez de deformarse. Docs: Object fit.
+
+  3. gap-{size} (ej. gap-3)
+     Aplica la propiedad CSS gap a contenedores flex o grid. Reemplaza los
+     márgenes manuales entre hijos. Docs: Gap.
+
+  4. lead
+     Clase de tipografía que agranda y aliviana un párrafo para destacarlo
+     como subtítulo o introducción. Aplica font-size: 1.25rem y
+     font-weight: 300. Docs: Typography.
+
+  5. d-none / d-{breakpoint}-block (ej. d-none d-md-block)
+     Oculta un elemento por defecto y lo muestra a partir de un breakpoint.
+     Útil para elementos decorativos que no caben en móvil. Docs: Display.
+
+Estructura de la sección de beneficios:
+  - 4 columnas (col-12 col-sm-6 col-lg-3): 1 → 2 → 4 columnas
+  - Cada beneficio: emoji decorativo (fs-1), título (fs-5 fw-bold), párrafo
+    descriptivo (text-secondary), dato destacado (fw-bold text-success)
+  - Todo centrado con text-center y espaciado con p-3
+
+Estructura del banner CTA:
+  - Fondo verde con text-bg-success, padding vertical con py-4
+  - Contenido en flex: columna en móvil (flex-column), fila desde md
+    (flex-md-row) con justify-content-between y align-items-center
+  - Imagen decorativa oculta en móvil (d-none d-md-block)
+  - Botón con text-bg-dark, rounded-3, padding horizontal/vertical (px-4 py-2)
+  - gap-3 separa los elementos sin necesidad de márgenes individuales
+
+Conclusión: las utilidades de Bootstrap permiten armar secciones completas sin
+escribir una sola línea de CSS. El HTML queda más largo (más clases), pero la
+ventaja es que no hay un archivo CSS separado que mantener ni conflictos de
+especificidad. El tradeoff es legibilidad del markup vs simplicidad del estilo.
