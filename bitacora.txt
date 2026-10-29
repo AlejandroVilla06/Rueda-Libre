@@ -238,3 +238,142 @@ Conclusión: las utilidades de Bootstrap permiten armar secciones completas sin
 escribir una sola línea de CSS. El HTML queda más largo (más clases), pero la
 ventaja es que no hay un archivo CSS separado que mantener ni conflictos de
 especificidad. El tradeoff es legibilidad del markup vs simplicidad del estilo.
+
+
+MR7 — Inicio migra a Bootstrap
+
+Archivos modificados: index.html, css/style.css
+
+Cambios en index.html:
+  - Se agregó el CDN de Bootstrap (CSS + JS bundle) antes de style.css
+  - header y footer: distribución con clases flex de Bootstrap
+    (d-flex, flex-column, flex-md-row, justify-content-between, align-items-center)
+  - main y aside: envueltos en .container (reemplaza max-width + margin auto)
+  - Portada: migrada de CSS Grid propio a row + col-12/col-md-6
+  - Flota: migrada de CSS Grid auto-fit a row + col-12/col-sm-6/col-lg-4/col-xl-3
+  - Rutas: migrada de CSS Grid 3 columnas a row + col-12/col-md-4
+
+Limpieza de css/style.css — reglas de distribución eliminadas:
+  - *, *::before, *::after { box-sizing } → Bootstrap ya incluye el reset
+  - body { margin: 0 } → Bootstrap lo hace en reboot
+  - header/main/aside/footer { max-width, margin auto, display flex } → .container
+  - header/footer en @media 768px { flex-direction: row } → flex-md-row en HTML
+  - .portada { display: grid, grid-template-columns } → row + col en HTML
+  - .flota { display: grid, grid-template-columns: auto-fit } → row + col en HTML
+  - .flota h2 / .rutas h2 { grid-column: 1/-1 } → ya no hay grid CSS
+  - .rutas { display: grid } → row + col en HTML
+  - .reservas-layout, .reservas-contacto, .fila-campos → se migrarán en MR8
+  - img { max-width: 100% } → Bootstrap lo hace con img-fluid / reboot
+  - Ambas @media queries completas (768px y 1200px) eliminadas
+  - Se agregó height: 100% a .bici para que las tarjetas igualen altura en la row
+  - Se agregó z-index: 1030 al botón WhatsApp para que quede sobre la navbar de Bootstrap
+
+3 conflictos encontrados en DevTools:
+
+  Conflicto 1 — body margin
+    Bootstrap (reboot.css): body { margin: 0 }
+    style.css (antes): body { margin: 0 }
+    En DevTools aparecían ambas reglas. Como hacen lo mismo, se eliminó la de
+    style.css. Bootstrap gana igualmente porque su selector tiene la misma
+    especificidad y se carga primero, pero la de style.css era redundante.
+
+  Conflicto 2 — box-sizing reset
+    Bootstrap (reboot.css): *, *::before, *::after { box-sizing: border-box }
+    style.css (antes): *, *::before, *::after { box-sizing: border-box }
+    Exactamente la misma regla duplicada. Se eliminó de style.css porque
+    Bootstrap ya la declara. En DevTools la de style.css ganaba por orden de
+    carga (último gana con misma especificidad), pero el resultado era idéntico.
+
+  Conflicto 3 — gap en el menú de navegación
+    Bootstrap: .d-flex no declara gap (se necesita la clase gap-*)
+    style.css (antes): #menu { display: flex; gap: 2rem }
+    Al migrar #menu a d-flex con gap-4 (1.5rem de Bootstrap), el gap de 2rem
+    de style.css ganaba por especificidad del ID. Se eliminó la regla de layout
+    de #menu del CSS y se dejó gap-4 en el HTML. Si se quiere exactamente 2rem,
+    se podría usar una clase gap custom, pero 1.5rem (gap-4) es visualmente
+    equivalente.
+
+Breakpoints verificados (pendiente verificación visual en DevTools):
+  360px:  header en columna, flota 1 columna, rutas 1 columna, portada apilada
+  768px:  header en fila, flota 2 columnas, rutas 3 columnas, portada 2 columnas
+  1280px: flota 3-4 columnas (según ancho real del container)
+
+
+MR8 — Rueda Libre v2.0-beta: migración completa
+
+Archivos modificados: paginas/tarifas.html, paginas/reservas.html, css/style.css
+
+Migración de tarifas.html:
+  - Bootstrap CDN + JS bundle agregados
+  - Header/footer: misma estructura flex que index.html
+  - main envuelto en .container
+  - Tablas: se agregaron clases table table-bordered + table-responsive wrapper
+    (Bootstrap maneja bordes, padding, y scroll horizontal en móvil)
+  - Se eliminaron reglas propias de tabla (width, border-collapse, padding, border
+    en th/td) porque table-bordered las reemplaza. Se conservó thead th con
+    background verde porque es identidad visual, no distribución.
+
+Migración de reservas.html:
+  - Bootstrap CDN + JS bundle agregados
+  - Header/footer: misma estructura flex
+  - Layout formulario + aside: migrado de .reservas-layout (CSS Grid 2fr 1fr)
+    a row + col-12 col-md-8 (formulario) + col-12 col-md-4 (aside)
+  - Fila documento/celular: migrada de .fila-campos (flex) a row + col-12 col-sm-6
+  - Se eliminaron del CSS: .reservas-layout, .reservas-contacto, .fila-campos
+    (todas eran distribución pura)
+
+Limpieza final de css/style.css:
+  Reglas eliminadas en esta etapa:
+    - table { width, border-collapse, margin-bottom } → Bootstrap table
+    - th, td { padding, border, text-align } → Bootstrap table-bordered
+    - .reservas-layout { max-width, margin, padding, grid } → container + row
+    - .reservas-contacto { padding } → col padding de Bootstrap
+    - .fila-campos { display: flex, gap } → row + col
+
+  Reglas que quedan (solo identidad):
+    - Variables CSS (:root)
+    - Tipografía (body, h1-h3)
+    - Navegación (colores, hover, focus, activo)
+    - Tarjetas (borde, border-radius, padding)
+    - Etiqueta "Nuevo" (position absolute)
+    - Flota cards (flex-direction column, borde, border-radius)
+    - Precio (color, font-weight)
+    - Portada/ruta img (border-radius)
+    - thead th (background verde — identidad)
+    - Formulario (labels, inputs, focus, submit)
+    - Botones CTA (colores, hover, focus)
+    - WhatsApp flotante (fixed, colores)
+
+Comparativa final CSS propio (v1.5) vs Bootstrap (v2.0-beta):
+
+  Líneas de CSS:
+    v1.5: ~200 líneas (distribución + identidad + 2 media queries)
+    v2.0-beta: ~130 líneas (solo identidad, 0 media queries)
+    Reducción: ~35% menos CSS
+
+  Tiempo de desarrollo:
+    v1.5: cada sección requería escribir display, grid-template-columns,
+    flex-direction, gap, max-width, margin, y luego duplicar todo en media queries
+    v2.0-beta: las clases de Bootstrap resuelven distribución en el HTML;
+    no se escribió ni una sola media query
+
+  Ventajas de Bootstrap:
+    - 0 media queries propias (todo resuelto con col-{bp}-{n} y flex-{bp}-{dir})
+    - Tablas responsive gratis con table-responsive (scroll horizontal en móvil)
+    - Container centrado con max-width automático por breakpoint
+    - Consistencia: todos los breakpoints y spacing siguen la misma escala
+    - Menos conflictos de especificidad al no duplicar reglas de layout
+
+  Ventajas de CSS propio:
+    - HTML más limpio (menos clases por elemento)
+    - auto-fit en CSS Grid se adapta a cualquier ancho sin definir breakpoints
+    - Sin dependencia de CDN externo (~200KB de Bootstrap)
+    - Control total sobre cada valor (no limitado a la escala de Bootstrap)
+    - Menor peso de página si solo se usan pocas reglas
+
+  Conclusión: para un sitio de este tamaño, Bootstrap acelera el desarrollo y
+  elimina la necesidad de escribir media queries, pero agrega ~200KB de CSS que
+  mayormente no se usa. En proyectos más grandes con muchos componentes y varias
+  personas en el equipo, Bootstrap (o Tailwind) paga la inversión porque todos
+  hablan el mismo sistema de clases. Para un sitio pequeño personal, CSS propio
+  puede ser más eficiente en peso final.

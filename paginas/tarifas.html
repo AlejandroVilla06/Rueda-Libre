@@ -2,103 +2,104 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Tarifas | Rueda Libre</title>
     <meta name="description" content="Las tarifas de alquiler y los recorridos disponibles">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-
-   <header>
+    <header class="container d-flex flex-column flex-md-row justify-content-between align-items-center py-3 gap-2">
         <h1>Rueda Libre</h1>
-        <nav id="menu">
+        <nav id="menu" class="d-flex flex-wrap gap-4">
             <a href="../index.html">Inicio</a>
             <a href="tarifas.html" class="activo">Tarifas y rutas</a>
             <a href="reservas.html">Reservas</a>
         </nav>
     </header>
 
-    
-   
-    <main>
-        <section>    
+    <main class="container">
+        <section class="mb-4">
             <h2>Tarifas de alquiler</h2>
-            <table>
-                <caption>Tarifas de alquiler de bicicletas</caption>
-                <thead>
-                    <tr>
-                        <th scope="col">Tipo de bicicleta</th>
-                        <th scope="col">1 hora</th>
-                        <th scope="col">Medio día</th>
-                        <th scope="col">Día completo</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">Urbana</th>
-                        <td>$10.000</td>
-                        <td>$30.000</td>
-                        <td>$50.000</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Montaña</th>
-                        <td>$15.000</td>
-                        <td>$45.000</td>
-                        <td>$70.000</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Eléctrica</th>
-                        <td>$25.000</td>
-                        <td>$70.000</td>
-                        <td>$110.000</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>    
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <caption>Tarifas de alquiler de bicicletas</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Tipo de bicicleta</th>
+                            <th scope="col">1 hora</th>
+                            <th scope="col">Medio día</th>
+                            <th scope="col">Día completo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Urbana</th>
+                            <td>$10.000</td>
+                            <td>$30.000</td>
+                            <td>$50.000</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Montaña</th>
+                            <td>$15.000</td>
+                            <td>$45.000</td>
+                            <td>$70.000</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Eléctrica</th>
+                            <td>$25.000</td>
+                            <td>$70.000</td>
+                            <td>$110.000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
-        <section id="recorridos">
+        <section id="recorridos" class="mb-4">
             <h2>Recorridos guiados</h2>
-            <table>
-                <caption>Recorridos guiados</caption>
-                <thead>
-                    <tr>
-                        <th scope="col">Recorrido</th>
-                        <th scope="col">Distancia</th>
-                        <th scope="col">Duración</th>
-                        <th scope="col">Dificultad</th>
-                        <th scope="col">Precio</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">Río y Parques</th>
-                        <td>12 km</td>
-                        <td>2 h</td>
-                        <td>Fácil</td>
-                        <td>$45.000</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Sabores de Barrio</th>
-                        <td>18 km</td>
-                        <td>3 h</td>
-                        <td>Medio</td>
-                        <td>$60.000</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Reto Las Palmas</th>
-                        <td>25 km</td>
-                        <td>4 h</td>
-                        <td>Difícil</td>
-                        <td>$85.000</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <caption>Recorridos guiados</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Recorrido</th>
+                            <th scope="col">Distancia</th>
+                            <th scope="col">Duración</th>
+                            <th scope="col">Dificultad</th>
+                            <th scope="col">Precio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Río y Parques</th>
+                            <td>12 km</td>
+                            <td>2 h</td>
+                            <td>Fácil</td>
+                            <td>$45.000</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Sabores de Barrio</th>
+                            <td>18 km</td>
+                            <td>3 h</td>
+                            <td>Medio</td>
+                            <td>$60.000</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Reto Las Palmas</th>
+                            <td>25 km</td>
+                            <td>4 h</td>
+                            <td>Difícil</td>
+                            <td>$85.000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
             <a href="reservas.html" class="btn-cta">Reservar ahora</a>
         </section>
 
-        
-        <section>    
+        <section class="mb-4">
             <h2>Qué llevar</h2>
             <ul>
                 <li>Ropa cómoda</li>
@@ -106,15 +107,15 @@
                 <li>Protector solar</li>
                 <li>Documento de identidad</li>
             </ul>
-        </section>    
+        </section>
     </main>
 
-    <aside>
-            <p>Todas las tarifas incluyen casco y candado.</p>
-            <p>Los recorridos salen sábados y domingos a las 7:00 a. m.</p>
-        </aside>
-    
-    <footer>
+    <aside class="container mb-4">
+        <p>Todas las tarifas incluyen casco y candado.</p>
+        <p>Los recorridos salen sábados y domingos a las 7:00 a. m.</p>
+    </aside>
+
+    <footer class="container d-flex flex-column flex-md-row justify-content-between align-items-start py-3 gap-4">
         <div>
             <h3>Rueda Libre</h3>
             <img src="../img/Font_logo.jpeg" alt="Logo de Rueda Libre" width="150">
@@ -132,5 +133,7 @@
     </footer>
 
     <a href="https://wa.me/573000000000" target="_blank" class="btn-whatsapp">WhatsApp</a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

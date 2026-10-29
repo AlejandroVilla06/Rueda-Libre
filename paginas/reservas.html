@@ -2,76 +2,79 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Reservas | Rueda Libre</title>
     <meta name="description" content="Reserva tu bicicleta en Rueda Libre, alquiler de bicicletas en Medellin">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <header>
+    <header class="container d-flex flex-column flex-md-row justify-content-between align-items-center py-3 gap-2">
         <h1>Rueda Libre</h1>
-        <nav id="menu">
+        <nav id="menu" class="d-flex flex-wrap gap-4">
             <a href="../index.html">Inicio</a>
             <a href="tarifas.html">Tarifas y rutas</a>
             <a href="reservas.html" class="activo">Reservas</a>
         </nav>
     </header>
 
-    <main class="reservas-layout">
-        <section>
-            <h2>Reserva tu bicicleta</h2>
+    <main class="container">
+        <div class="row g-4">
+            <section class="col-12 col-md-8">
+                <h2>Reserva tu bicicleta</h2>
 
-            <form>
-                <label for="nombre">Nombre</label>
-                <input type="text" id="nombre" name="nombre" required>
+                <form>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" required>
 
-                <label for="correo">Correo electrónico</label>
-                <input type="email" id="correo" name="correo" required>
+                    <label for="correo">Correo electrónico</label>
+                    <input type="email" id="correo" name="correo" required>
 
-                <div class="fila-campos">
-                    <div>
-                        <label for="documento">Documento</label>
-                        <input type="text" id="documento" name="documento" required>
+                    <div class="row g-3">
+                        <div class="col-12 col-sm-6">
+                            <label for="documento">Documento</label>
+                            <input type="text" id="documento" name="documento" required>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <label for="celular">Celular</label>
+                            <input type="tel" id="celular" name="celular" required>
+                        </div>
                     </div>
-                    <div>
-                        <label for="celular">Celular</label>
-                        <input type="tel" id="celular" name="celular" required>
-                    </div>
-                </div>
 
-                <label for="fecha">Fecha de reserva</label>
-                <input type="date" id="fecha" name="fecha" required>
+                    <label for="fecha">Fecha de reserva</label>
+                    <input type="date" id="fecha" name="fecha" required>
 
-                <label for="tipo">Tipo de bicicleta</label>
-                <select id="tipo" name="tipo">
-                    <option value="">Seleccioná una opción</option>
-                    <option value="urbana">Urbana</option>
-                    <option value="montana">Montaña</option>
-                    <option value="electrica">Eléctrica</option>
-                </select>
+                    <label for="tipo">Tipo de bicicleta</label>
+                    <select id="tipo" name="tipo">
+                        <option value="">Seleccioná una opción</option>
+                        <option value="urbana">Urbana</option>
+                        <option value="montana">Montaña</option>
+                        <option value="electrica">Eléctrica</option>
+                    </select>
 
-                <button type="submit">Reservar</button>
-            </form>
-        </section>
+                    <button type="submit">Reservar</button>
+                </form>
+            </section>
 
-        <aside class="reservas-contacto">
-            <h2>Horario de atención</h2>
-            <dl>
-                <dt>Lunes a viernes</dt>
-                <dd>7:00 a. m. a 7:00 p. m.</dd>
+            <aside class="col-12 col-md-4">
+                <h2>Horario de atención</h2>
+                <dl>
+                    <dt>Lunes a viernes</dt>
+                    <dd>7:00 a. m. a 7:00 p. m.</dd>
 
-                <dt>Sábados, domingos y festivos</dt>
-                <dd>6:00 a. m. a 2:00 p. m.</dd>
-            </dl>
+                    <dt>Sábados, domingos y festivos</dt>
+                    <dd>6:00 a. m. a 2:00 p. m.</dd>
+                </dl>
 
-            <h2>Contacto</h2>
-            <p><a href="mailto:hola@ruedalibre.com">hola@ruedalibre.com</a></p>
-            <p><a href="https://wa.me/573000000000">WhatsApp</a></p>
-        </aside>
+                <h2>Contacto</h2>
+                <p><a href="mailto:hola@ruedalibre.com">hola@ruedalibre.com</a></p>
+                <p><a href="https://wa.me/573000000000">WhatsApp</a></p>
+            </aside>
+        </div>
     </main>
-    
-    <footer>
+
+    <footer class="container d-flex flex-column flex-md-row justify-content-between align-items-start py-3 gap-4">
         <div>
             <h3>Rueda Libre</h3>
             <img src="../img/Font_logo.jpeg" alt="Logo de Rueda Libre" width="150">
@@ -89,5 +92,7 @@
     </footer>
 
     <a href="https://wa.me/573000000000" target="_blank" class="btn-whatsapp">WhatsApp</a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
