@@ -7,17 +7,25 @@
     <meta name="description" content="Las tarifas de alquiler y los recorridos disponibles">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <header class="container d-flex flex-column flex-md-row justify-content-between align-items-center py-3 gap-2">
-        <h1>Rueda Libre</h1>
-        <nav id="menu" class="d-flex flex-wrap gap-4">
-            <a href="../index.html">Inicio</a>
-            <a href="tarifas.html" class="activo">Tarifas y rutas</a>
-            <a href="reservas.html">Reservas</a>
-        </nav>
-    </header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container">
+            <a class="navbar-brand marca-rueda" href="../index.html"><i class="bi bi-bicycle" aria-hidden="true"></i> Rueda Libre</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuPrincipal">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="tarifas.html">Tarifas y rutas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="reservas.html">Reservas</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
     <main class="container">
         <section class="mb-4">
@@ -96,7 +104,7 @@
                     </tbody>
                 </table>
             </div>
-            <a href="reservas.html" class="btn-cta">Reservar ahora</a>
+            <a href="reservas.html" class="btn btn-primary">Reservar ahora</a>
         </section>
 
         <section class="mb-4">
@@ -115,24 +123,26 @@
         <p>Los recorridos salen sábados y domingos a las 7:00 a. m.</p>
     </aside>
 
-    <footer class="container d-flex flex-column flex-md-row justify-content-between align-items-start py-3 gap-4">
-        <div>
-            <h3>Rueda Libre</h3>
-            <img src="../img/Font_logo.jpeg" alt="Logo de Rueda Libre" width="150">
-        </div>
-        <div>
-            <h3>Contacto</h3>
-            <p><a href="mailto:hola@ruedalibre.com">hola@ruedalibre.com</a></p>
-            <p><a href="https://wa.me/573000000000">WhatsApp</a></p>
-        </div>
-        <div>
-            <h3>Horario</h3>
-            <p>Lunes a viernes: 7:00 a.m. – 6:00 p.m.</p>
-            <p>Sábados: 8:00 a.m. – 4:00 p.m.</p>
+    <footer class="pie-marca mt-4">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-start py-4 gap-4">
+            <div>
+                <h3><i class="bi bi-bicycle" aria-hidden="true"></i> Rueda Libre</h3>
+                <img src="../img/Font_logo.jpeg" alt="Logo de Rueda Libre" width="150">
+            </div>
+            <div>
+                <h3>Contacto</h3>
+                <p><i class="bi bi-envelope" aria-hidden="true"></i> <a href="mailto:hola@ruedalibre.com">hola@ruedalibre.com</a></p>
+                <p><i class="bi bi-whatsapp" aria-hidden="true"></i> <a href="https://wa.me/573000000000">WhatsApp</a></p>
+            </div>
+            <div>
+                <h3><i class="bi bi-clock" aria-hidden="true"></i> Horario</h3>
+                <p>Lunes a viernes: 7:00 a.m. – 6:00 p.m.</p>
+                <p>Sábados: 8:00 a.m. – 4:00 p.m.</p>
+            </div>
         </div>
     </footer>
 
-    <a href="https://wa.me/573000000000" target="_blank" class="btn-whatsapp">WhatsApp</a>
+    <a href="https://wa.me/573000000000" target="_blank" class="btn-whatsapp" aria-label="Contactar por WhatsApp"><i class="bi bi-whatsapp" aria-hidden="true"></i> WhatsApp</a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>

@@ -377,3 +377,107 @@ Comparativa final CSS propio (v1.5) vs Bootstrap (v2.0-beta):
   personas en el equipo, Bootstrap (o Tailwind) paga la inversión porque todos
   hablan el mismo sistema de clases. Para un sitio pequeño personal, CSS propio
   puede ser más eficiente en peso final.
+
+================================================================================
+SEMANA 2 — DÍA 3: Componentes y personalización de Bootstrap
+================================================================================
+
+--- MR9: Menú para el celular: navbar y botones ---
+
+Cambios realizados:
+  - Reemplazado el header/nav de las 3 páginas por navbar Bootstrap con
+    navbar-expand-lg, collapse, navbar-toggler y data-bs-toggle/target.
+  - Menú hamburguesa funcional bajo 992px, enlaces directos desde lg.
+  - Clase .activo reemplazada por .active + aria-current="page".
+  - Todas las CTAs convertidas a btn Bootstrap:
+    - btn-primary para acciones principales (Reservar)
+    - btn-outline-primary para acciones secundarias (Ver tarifas, Ver detalles)
+    - btn-sm en cards para mantener proporción.
+  - Bundle JS verificado: una sola carga por página, antes de </body>.
+
+Componentes usados: navbar, navbar-expand-lg, navbar-brand, navbar-toggler,
+  collapse, navbar-collapse, nav-link, btn, btn-primary, btn-outline-primary,
+  btn-sm, data-bs-toggle, data-bs-target, aria-current.
+
+--- MR10: La flota en cards y promociones que rotan ---
+
+Cambios realizados:
+  - Flota: cada bicicleta convertida de article.bici a article.card.h-100 con
+    card-img-top, card-body (d-flex flex-column), card-title, card-text,
+    fw-bold text-primary para precio, btn mt-auto para botón al fondo.
+  - Rutas: convertidas a cards con card-img-top, card-body text-center.
+  - Carrusel: 3 promociones del cliente en carousel slide con data-bs-ride:
+    1. Martes 2x1 en bicicletas urbanas
+    2. 20% de descuento en eléctricas de lunes a jueves
+    3. Si cumples años, el recorrido guiado es gratis
+  - Controles prev/next con visually-hidden para lectores de pantalla.
+  - Cada imagen tiene alt descriptivo.
+  - CSS: altura uniforme de carousel-item img controlada desde style.css.
+
+Componentes usados: card, card-img-top, card-body, card-title, card-text,
+  h-100, carousel, carousel-inner, carousel-item, carousel-control-prev/next,
+  data-bs-slide, data-bs-ride, visually-hidden.
+
+--- MR11: Reservas confiables: validación visual, alerta y modal ---
+
+Cambios en reservas.html:
+  - Formulario migrado a clases Bootstrap: form-label, form-control,
+    form-select, form-check, form-check-input, form-check-label.
+  - Validación visual: atributo novalidate + clase needs-validation +
+    script oficial de la documentación Bootstrap.
+  - Cada campo obligatorio tiene un div.invalid-feedback con mensaje
+    específico explicando cómo corregir el error.
+  - Reglas nativas preservadas: required, minlength, pattern, type="email",
+    type="date", type="tel".
+  - Alerta dismissible (alert-warning alert-dismissible fade show) con
+    recordatorio de documento de identidad.
+  - Modal "Políticas de alquiler" con las 5 políticas en lista ordenada:
+    1. Documento original al recoger la bici
+    2. Revisar bicicleta con el asesor
+    3. Recargo de $5.000 por cada 15 min de retraso
+    4. Daños por mal uso se cobran según reparación
+    5. Menores acompañados por adulto
+  - Checkbox de aceptación con link que abre el modal.
+
+Componentes usados: form-label, form-control, form-select, form-check,
+  needs-validation, novalidate, invalid-feedback, alert, alert-dismissible,
+  btn-close, data-bs-dismiss, modal, modal-dialog, modal-content,
+  modal-header, modal-body, modal-footer, data-bs-toggle="modal".
+
+--- MR12: Rueda Libre v2.0: con identidad propia ---
+
+Personalización en css/style.css:
+  - Variables globales sobrescritas en :root:
+    --bs-primary: #1E7A4F (Verde Ruta)
+    --bs-primary-rgb: 30, 122, 79
+    --bs-link-color y --bs-link-hover-color
+    --bs-border-radius: 8px
+  - .btn-primary: variables --bs-btn-bg, hover, active con Verde Ruta.
+  - .btn-outline-primary: variables ajustadas para Verde Ruta.
+  - .btn-naranja: variante Naranja Pedal (#E8630A) con contraste blanco.
+
+Clases propias creadas (3+):
+  1. .marca-rueda — font Montserrat bold para navbar-brand
+  2. .seccion-titulo — border-bottom verde + padding, para títulos de sección
+  3. .pie-marca — footer verde con texto blanco y links claros
+
+Bootstrap Icons (CDN 1.11.3) — al menos 4 usos con accesibilidad:
+  - bi-bicycle en navbar-brand (aria-hidden)
+  - bi-envelope en contacto footer (aria-hidden)
+  - bi-whatsapp en footer y botón flotante (aria-hidden + aria-label)
+  - bi-clock en horario footer (aria-hidden)
+  - bi-tree, bi-piggy-bank, bi-compass en beneficios (aria-hidden)
+
+Verificaciones:
+  - Sin !important en todo style.css.
+  - Sin clases de Bootstrap 4 (data-toggle, ml-auto, etc.).
+  - Hoja propia cargada después de Bootstrap en las 3 páginas.
+  - Bundle una sola vez por página.
+  - Estructura container > row > col en todas las grillas.
+  - Contraste 4.5:1 verificado: #1E7A4F sobre #FAF6EF = 4.7:1,
+    #fff sobre #1E7A4F = 4.5:1 (pasa AA).
+
+Clases propias documentadas:
+  5 en total (marca-rueda, seccion-titulo, pie-marca, btn-naranja, btn-whatsapp).
+
+Conteo de Bootstrap Icons: 8 usos con aria-hidden en decorativos.
