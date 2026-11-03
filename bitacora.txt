@@ -512,3 +512,21 @@ Comparación: botón Bootstrap (S2) vs botón Tailwind (S3)
     piezas atómicas de un solo propósito (bg-*, px-*, rounded-*) y vos armás el
     componente combinándolas. Bootstrap es más rápido para arrancar; Tailwind da
     más control sobre el resultado final.
+
+--- MiniReto 2: Del prototipo al proyecto real — CLI y botones ---
+
+Migración Play CDN → Tailwind CLI:
+  - npm install -D tailwindcss @tailwindcss/cli
+  - Archivo de entrada: src/input.css con @import "tailwindcss"
+  - Comando: npx @tailwindcss/cli -i src/input.css -o dist/output.css --watch
+  - El HTML enlaza dist/output.css en vez del script del CDN
+  - El CDN genera el CSS en el navegador (lento); la CLI lo genera una vez
+    en el build y entrega un archivo estático optimizado (rápido).
+
+Kit de botones (3 variantes):
+  1. Principal: bg-amber-400, texto oscuro, hover más claro, focus con ring
+  2. Secundario: bg-slate-700, texto blanco, hover más claro, focus con ring
+  3. Contorno: solo borde amber, sin fondo, hover rellena el fondo y cambia texto
+
+  Los tres comparten: font-semibold, px-6 py-3, rounded-full, transition-colors.
+  Cada estado (hover, focus) se define con prefijos directos en el HTML.
