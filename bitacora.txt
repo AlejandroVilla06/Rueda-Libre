@@ -481,3 +481,34 @@ Clases propias documentadas:
   5 en total (marca-rueda, seccion-titulo, pie-marca, btn-naranja, btn-whatsapp).
 
 Conteo de Bootstrap Icons: 8 usos con aria-hidden en decorativos.
+
+================================================================================
+SEMANA 3 — Introducción a Tailwind CSS
+================================================================================
+
+--- MiniReto 1: Prototipo nocturno con Play CDN ---
+
+Archivo: nocturna/prototipo.html
+
+Comparación: botón Bootstrap (S2) vs botón Tailwind (S3)
+
+  Bootstrap (semana 2):
+    <a class="btn btn-warning btn-lg rounded-pill" href="#inscripcion">Inscríbete</a>
+    → Una sola clase predefinida (btn-warning) aplica fondo, color, padding,
+      borde y hover. El framework decide los valores por defecto.
+
+  Tailwind (semana 3):
+    <a class="inline-block bg-amber-400 text-slate-900 font-semibold text-lg
+              px-8 py-3.5 rounded-full hover:bg-amber-300
+              focus:outline-hidden focus:ring-2 focus:ring-amber-200
+              transition-colors"
+       href="#inscripcion">Inscríbete</a>
+    → Cada propiedad visual es una clase independiente. No hay "botón"
+      predefinido: tú decides cada valor (color exacto, padding, radio, estados).
+
+  Diferencia clave:
+    Bootstrap es un framework de componentes: te da piezas armadas (.btn, .card,
+    .navbar) que usás tal cual o sobreescribís. Tailwind es utility-first: te da
+    piezas atómicas de un solo propósito (bg-*, px-*, rounded-*) y vos armás el
+    componente combinándolas. Bootstrap es más rápido para arrancar; Tailwind da
+    más control sobre el resultado final.
