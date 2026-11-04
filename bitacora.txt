@@ -545,3 +545,29 @@ Estructura de la card:
 
 Decisión semántica: usé <dl> (definition list) para los datos de la ruta
   porque son pares etiqueta-valor, no una lista simple ni un párrafo.
+
+--- MiniReto 4: Kit de componentes v0.1 — Alertas e Inputs ---
+
+Componentes nuevos añadidos al kit (index.html):
+
+  Alertas (3 variantes):
+    - Éxito: bg-emerald-50, border-l-4 border-emerald-500, ícono ✓
+    - Advertencia: bg-amber-50, border-l-4 border-amber-500, ícono ⚠
+    - Error: bg-red-50, border-l-4 border-red-500, ícono ✕
+    Patrón: flex items-start gap-3, borde izquierdo grueso como indicador visual,
+    rounded-r-lg (solo esquinas derechas). Íconos con aria-hidden="true" porque
+    son decorativos — el texto ya comunica el tipo de alerta.
+
+  Inputs (3 variantes):
+    1. Básico: label + input con bg-slate-900, border-slate-700, text-white
+    2. Con texto de ayuda: igual + <p> en text-xs text-slate-500 debajo
+    3. Con error: border-red-500, aria-describedby vincula el input con el
+       mensaje de error (<p id="tel-error">), focus:ring-red-400
+
+  Decisiones:
+    - Tema oscuro en inputs (bg-slate-900) para consistencia con el fondo
+      slate-950 de la landing
+    - focus:ring-2 focus:ring-amber-400 en inputs normales, ring-red-400 en error
+    - aria-describedby en el input con error: vincula programáticamente el input
+      con su mensaje de error para lectores de pantalla
+    - focus:outline-hidden (Tailwind v4) en vez de outline-none

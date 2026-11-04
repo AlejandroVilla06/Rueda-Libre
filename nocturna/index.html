@@ -42,11 +42,17 @@
     </a>
   </section>
 
-  <!-- Kit de botones -->
-  <section class="max-w-2xl mx-auto px-6 py-12">
-    <h2 class="text-2xl font-bold text-white mb-8">Kit de componentes · Botones</h2>
+  <!-- ============================== -->
+  <!-- Kit de componentes v0.1        -->
+  <!-- ============================== -->
 
-    <div class="flex flex-wrap gap-4 items-center">
+  <!-- Botones -->
+  <section class="max-w-2xl mx-auto px-6 pt-16 pb-8">
+    <h2 class="text-2xl font-bold text-white mb-2">Kit de componentes v0.1</h2>
+    <p class="text-slate-400 mb-8">Piezas reutilizables para la landing Rueda Nocturna.</p>
+
+    <h3 class="text-lg font-semibold text-slate-300 mb-4">Botones</h3>
+    <div class="flex flex-wrap gap-4 items-center mb-12">
 
       <!-- Principal -->
       <a href="#"
@@ -69,11 +75,11 @@
     </div>
   </section>
 
-  <!-- Card de ruta -->
-  <section class="max-w-2xl mx-auto px-6 py-12">
-    <h2 class="text-2xl font-bold text-white mb-8">Rutas disponibles</h2>
+  <!-- Card -->
+  <section class="max-w-2xl mx-auto px-6 pb-8">
+    <h3 class="text-lg font-semibold text-slate-300 mb-4">Card</h3>
 
-    <article class="max-w-sm bg-white border border-slate-200 rounded-xl shadow-md overflow-hidden transition-shadow hover:shadow-xl">
+    <article class="max-w-sm bg-white border border-slate-200 rounded-xl shadow-md overflow-hidden transition-shadow hover:shadow-xl mb-12">
       <img class="w-full h-48 object-cover"
            src="https://picsum.photos/seed/luces/640/320"
            alt="Ciclistas recorriendo el centro de Medellín de noche">
@@ -83,7 +89,7 @@
           Fácil
         </span>
 
-        <h3 class="text-xl font-bold text-slate-900">Luces del Centro</h3>
+        <h4 class="text-xl font-bold text-slate-900">Luces del Centro</h4>
 
         <dl class="grid grid-cols-3 gap-2">
           <div>
@@ -108,6 +114,61 @@
         </a>
       </div>
     </article>
+  </section>
+
+  <!-- Alertas -->
+  <section class="max-w-2xl mx-auto px-6 pb-8">
+    <h3 class="text-lg font-semibold text-slate-300 mb-4">Alertas</h3>
+
+    <div class="space-y-3 mb-12">
+      <!-- Éxito -->
+      <div class="flex items-start gap-3 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-lg p-4">
+        <span class="text-emerald-600 text-lg leading-none" aria-hidden="true">✓</span>
+        <p class="text-sm text-emerald-800">Tu inscripción fue registrada con éxito. Recibirás un correo de confirmación.</p>
+      </div>
+
+      <!-- Advertencia -->
+      <div class="flex items-start gap-3 bg-amber-50 border-l-4 border-amber-500 rounded-r-lg p-4">
+        <span class="text-amber-600 text-lg leading-none" aria-hidden="true">⚠</span>
+        <p class="text-sm text-amber-800">Quedan pocos cupos para la ruta «Luces del Centro». Inscríbete pronto.</p>
+      </div>
+
+      <!-- Error -->
+      <div class="flex items-start gap-3 bg-red-50 border-l-4 border-red-500 rounded-r-lg p-4">
+        <span class="text-red-600 text-lg leading-none" aria-hidden="true">✕</span>
+        <p class="text-sm text-red-800">No pudimos procesar tu inscripción. Revisá los datos e intentá de nuevo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Inputs -->
+  <section class="max-w-2xl mx-auto px-6 pb-16">
+    <h3 class="text-lg font-semibold text-slate-300 mb-4">Inputs</h3>
+
+    <div class="max-w-sm space-y-5">
+      <!-- Input básico -->
+      <div>
+        <label for="nombre" class="block text-sm font-medium text-slate-300 mb-1">Nombre completo</label>
+        <input type="text" id="nombre" placeholder="Ej: María López"
+               class="w-full bg-slate-900 border border-slate-700 text-white rounded-lg px-4 py-2.5 text-sm placeholder:text-slate-500 focus:outline-hidden focus:ring-2 focus:ring-amber-400 focus:border-amber-400 transition-colors">
+      </div>
+
+      <!-- Input con texto de ayuda -->
+      <div>
+        <label for="email" class="block text-sm font-medium text-slate-300 mb-1">Correo electrónico</label>
+        <input type="email" id="email" placeholder="correo@ejemplo.com"
+               class="w-full bg-slate-900 border border-slate-700 text-white rounded-lg px-4 py-2.5 text-sm placeholder:text-slate-500 focus:outline-hidden focus:ring-2 focus:ring-amber-400 focus:border-amber-400 transition-colors">
+        <p class="text-xs text-slate-500 mt-1">Enviaremos la confirmación a este correo.</p>
+      </div>
+
+      <!-- Input con error -->
+      <div>
+        <label for="telefono" class="block text-sm font-medium text-slate-300 mb-1">Teléfono</label>
+        <input type="tel" id="telefono" value="abc" aria-describedby="tel-error"
+               class="w-full bg-slate-900 border border-red-500 text-white rounded-lg px-4 py-2.5 text-sm focus:outline-hidden focus:ring-2 focus:ring-red-400 focus:border-red-400 transition-colors">
+        <p id="tel-error" class="text-xs text-red-400 mt-1">Ingresá solo números (10 dígitos).</p>
+      </div>
+    </div>
   </section>
 
 </body>
