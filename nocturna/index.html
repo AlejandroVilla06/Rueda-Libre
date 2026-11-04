@@ -8,168 +8,262 @@
 </head>
 <body class="bg-slate-950 min-h-screen">
 
-  <!-- Hero -->
-  <section class="max-w-2xl mx-auto px-6 py-16 text-center">
+  <!-- Header -->
+  <header class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="#inicio" class="text-xl font-bold text-white">Rueda Nocturna</a>
 
-    <span class="inline-block bg-amber-400/10 text-amber-400 text-xs font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">
-      Nuevo · Jueves a sábado
-    </span>
-
-    <h1 class="text-5xl font-extrabold text-white mb-4">Rueda Nocturna</h1>
-
-    <p class="text-xl text-slate-400 mb-10">
-      Descubre Medellín de noche en bicicleta
-    </p>
-
-    <div class="flex justify-center gap-10 mb-12">
-      <div>
-        <p class="text-3xl font-bold text-white">3</p>
-        <p class="text-sm text-slate-500">Rutas</p>
-      </div>
-      <div>
-        <p class="text-3xl font-bold text-white">15 km</p>
-        <p class="text-sm text-slate-500">Promedio</p>
-      </div>
-      <div>
-        <p class="text-3xl font-bold text-white">7:00 p.m.</p>
-        <p class="text-sm text-slate-500">Salida</p>
-      </div>
-    </div>
-
-    <a href="#inscripcion"
-       class="inline-block bg-amber-400 text-slate-900 font-semibold text-lg px-8 py-3.5 rounded-full hover:bg-amber-300 focus:outline-hidden focus:ring-2 focus:ring-amber-200 transition-colors">
-      Inscríbete
-    </a>
-  </section>
-
-  <!-- ============================== -->
-  <!-- Kit de componentes v0.1        -->
-  <!-- ============================== -->
-
-  <!-- Botones -->
-  <section class="max-w-2xl mx-auto px-6 pt-16 pb-8">
-    <h2 class="text-2xl font-bold text-white mb-2">Kit de componentes v0.1</h2>
-    <p class="text-slate-400 mb-8">Piezas reutilizables para la landing Rueda Nocturna.</p>
-
-    <h3 class="text-lg font-semibold text-slate-300 mb-4">Botones</h3>
-    <div class="flex flex-wrap gap-4 items-center mb-12">
-
-      <!-- Principal -->
-      <a href="#"
-         class="inline-block bg-amber-400 text-slate-900 font-semibold px-6 py-3 rounded-full hover:bg-amber-300 focus:outline-hidden focus:ring-2 focus:ring-amber-200 transition-colors">
-        Principal
+    <nav class="flex items-center gap-8">
+      <a href="#rutas" class="text-sm text-slate-400 hover:text-white transition-colors">Rutas</a>
+      <a href="#como-funciona" class="text-sm text-slate-400 hover:text-white transition-colors">Cómo funciona</a>
+      <a href="#inscripcion"
+         class="inline-block bg-amber-400 text-slate-900 font-semibold px-5 py-2 rounded-full text-sm hover:bg-amber-300 focus:outline-hidden focus:ring-2 focus:ring-amber-200 transition-colors">
+        Inscríbete
       </a>
+    </nav>
+  </header>
 
-      <!-- Secundario -->
-      <a href="#"
-         class="inline-block bg-slate-700 text-white font-semibold px-6 py-3 rounded-full hover:bg-slate-600 focus:outline-hidden focus:ring-2 focus:ring-slate-500 transition-colors">
-        Secundario
+  <main>
+
+    <!-- Hero -->
+    <section id="inicio" class="max-w-5xl mx-auto px-6 py-16 text-center">
+
+      <span class="inline-block bg-amber-400/10 text-amber-400 text-xs font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">
+        Nuevo · Jueves a sábado
+      </span>
+
+      <h1 class="text-5xl font-extrabold text-white mb-4">Rueda Nocturna</h1>
+
+      <p class="text-xl text-slate-400 mb-10">
+        Descubre Medellín de noche en bicicleta
+      </p>
+
+      <div class="flex justify-center gap-10 mb-12">
+        <div>
+          <p class="text-3xl font-bold text-white">3</p>
+          <p class="text-sm text-slate-500">Rutas</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-white">15 km</p>
+          <p class="text-sm text-slate-500">Promedio</p>
+        </div>
+        <div>
+          <p class="text-3xl font-bold text-white">7:00 p.m.</p>
+          <p class="text-sm text-slate-500">Salida</p>
+        </div>
+      </div>
+
+      <a href="#inscripcion"
+         class="inline-block bg-amber-400 text-slate-900 font-semibold text-lg px-8 py-3.5 rounded-full hover:bg-amber-300 focus:outline-hidden focus:ring-2 focus:ring-amber-200 transition-colors">
+        Inscríbete
       </a>
+    </section>
 
-      <!-- Contorno -->
-      <a href="#"
-         class="inline-block border-2 border-amber-400 text-amber-400 font-semibold px-6 py-3 rounded-full hover:bg-amber-400 hover:text-slate-900 focus:outline-hidden focus:ring-2 focus:ring-amber-200 transition-colors">
-        Contorno
-      </a>
+    <!-- Rutas -->
+    <section id="rutas" class="max-w-5xl mx-auto px-6 py-16">
+      <h2 class="text-3xl font-bold text-white text-center mb-4">Nuestras rutas</h2>
+      <p class="text-slate-400 text-center mb-10">Tres recorridos para descubrir Medellín de noche.</p>
+
+      <div class="grid grid-cols-3 gap-6">
+
+        <article class="bg-white border border-slate-200 rounded-xl shadow-md overflow-hidden transition-shadow hover:shadow-xl">
+          <img class="w-full h-48 object-cover"
+               src="https://picsum.photos/seed/luces/640/320"
+               alt="Ciclistas recorriendo el centro de Medellín de noche">
+          <div class="p-5 space-y-3">
+            <span class="inline-block bg-emerald-100 text-emerald-800 text-xs font-semibold px-2 py-1 rounded-full">Fácil</span>
+            <h3 class="text-xl font-bold text-slate-900">Luces del Centro</h3>
+            <dl class="grid grid-cols-3 gap-2">
+              <div>
+                <dt class="text-xs text-slate-500">Distancia</dt>
+                <dd class="font-semibold">10 km</dd>
+              </div>
+              <div>
+                <dt class="text-xs text-slate-500">Duración</dt>
+                <dd class="font-semibold">2 h</dd>
+              </div>
+              <div>
+                <dt class="text-xs text-slate-500">Encuentro</dt>
+                <dd class="font-semibold">Sede</dd>
+              </div>
+            </dl>
+            <p class="text-2xl font-bold text-slate-900">$55.000</p>
+            <a href="#inscripcion"
+               class="block text-center bg-amber-400 text-slate-900 font-semibold px-6 py-3 rounded-full hover:bg-amber-300 focus:outline-hidden focus:ring-2 focus:ring-amber-200 transition-colors">
+              Inscríbete
+            </a>
+          </div>
+        </article>
+
+        <article class="bg-white border border-slate-200 rounded-xl shadow-md overflow-hidden transition-shadow hover:shadow-xl">
+          <img class="w-full h-48 object-cover"
+               src="https://picsum.photos/seed/cerros/640/320"
+               alt="Vista panorámica de Medellín desde un cerro de noche">
+          <div class="p-5 space-y-3">
+            <span class="inline-block bg-amber-100 text-amber-800 text-xs font-semibold px-2 py-1 rounded-full">Moderada</span>
+            <h3 class="text-xl font-bold text-slate-900">Cerros y Miradores</h3>
+            <dl class="grid grid-cols-3 gap-2">
+              <div>
+                <dt class="text-xs text-slate-500">Distancia</dt>
+                <dd class="font-semibold">18 km</dd>
+              </div>
+              <div>
+                <dt class="text-xs text-slate-500">Duración</dt>
+                <dd class="font-semibold">3 h</dd>
+              </div>
+              <div>
+                <dt class="text-xs text-slate-500">Encuentro</dt>
+                <dd class="font-semibold">Sede</dd>
+              </div>
+            </dl>
+            <p class="text-2xl font-bold text-slate-900">$70.000</p>
+            <a href="#inscripcion"
+               class="block text-center bg-amber-400 text-slate-900 font-semibold px-6 py-3 rounded-full hover:bg-amber-300 focus:outline-hidden focus:ring-2 focus:ring-amber-200 transition-colors">
+              Inscríbete
+            </a>
+          </div>
+        </article>
+
+        <article class="bg-white border border-slate-200 rounded-xl shadow-md overflow-hidden transition-shadow hover:shadow-xl">
+          <img class="w-full h-48 object-cover"
+               src="https://picsum.photos/seed/rio/640/320"
+               alt="Ciclistas junto al río Medellín iluminado">
+          <div class="p-5 space-y-3">
+            <span class="inline-block bg-emerald-100 text-emerald-800 text-xs font-semibold px-2 py-1 rounded-full">Fácil</span>
+            <h3 class="text-xl font-bold text-slate-900">Río y Parques</h3>
+            <dl class="grid grid-cols-3 gap-2">
+              <div>
+                <dt class="text-xs text-slate-500">Distancia</dt>
+                <dd class="font-semibold">12 km</dd>
+              </div>
+              <div>
+                <dt class="text-xs text-slate-500">Duración</dt>
+                <dd class="font-semibold">2.5 h</dd>
+              </div>
+              <div>
+                <dt class="text-xs text-slate-500">Encuentro</dt>
+                <dd class="font-semibold">Parques del Río</dd>
+              </div>
+            </dl>
+            <p class="text-2xl font-bold text-slate-900">$60.000</p>
+            <a href="#inscripcion"
+               class="block text-center bg-amber-400 text-slate-900 font-semibold px-6 py-3 rounded-full hover:bg-amber-300 focus:outline-hidden focus:ring-2 focus:ring-amber-200 transition-colors">
+              Inscríbete
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Cómo funciona -->
+    <section id="como-funciona" class="max-w-5xl mx-auto px-6 py-16">
+      <h2 class="text-3xl font-bold text-white text-center mb-4">¿Cómo funciona?</h2>
+      <p class="text-slate-400 text-center mb-10">Cuatro pasos y estás pedaleando.</p>
+
+      <ol class="grid grid-cols-4 gap-6 list-none">
+        <li class="text-center">
+          <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-amber-400 text-slate-900 font-bold text-lg mb-4">1</span>
+          <h3 class="text-lg font-semibold text-white mb-2">Elige tu ruta</h3>
+          <p class="text-sm text-slate-400">Revisa las opciones, la distancia y el nivel de dificultad.</p>
+        </li>
+        <li class="text-center">
+          <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-amber-400 text-slate-900 font-bold text-lg mb-4">2</span>
+          <h3 class="text-lg font-semibold text-white mb-2">Inscríbete</h3>
+          <p class="text-sm text-slate-400">Llena el formulario con tus datos y confirma tu cupo.</p>
+        </li>
+        <li class="text-center">
+          <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-amber-400 text-slate-900 font-bold text-lg mb-4">3</span>
+          <h3 class="text-lg font-semibold text-white mb-2">Recoge tu equipo</h3>
+          <p class="text-sm text-slate-400">Pasa por la sede antes de la salida para recoger chaleco y luces.</p>
+        </li>
+        <li class="text-center">
+          <span class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-amber-400 text-slate-900 font-bold text-lg mb-4">4</span>
+          <h3 class="text-lg font-semibold text-white mb-2">Rueda</h3>
+          <p class="text-sm text-slate-400">Disfruta el recorrido con guías y paradas en los mejores puntos.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Inscripción -->
+    <section id="inscripcion" class="max-w-5xl mx-auto px-6 py-16">
+      <div class="max-w-lg mx-auto text-center">
+        <h2 class="text-3xl font-bold text-white mb-4">Reserva tu cupo</h2>
+        <p class="text-slate-400 mb-8">Completa tus datos y te enviamos la confirmación por correo.</p>
+
+        <form class="space-y-5 text-left">
+          <div>
+            <label for="nombre" class="block text-sm font-medium text-slate-300 mb-1">Nombre completo</label>
+            <input type="text" id="nombre" placeholder="Ej: María López"
+                   class="w-full bg-slate-900 border border-slate-700 text-white rounded-lg px-4 py-2.5 text-sm placeholder:text-slate-500 focus:outline-hidden focus:ring-2 focus:ring-amber-400 focus:border-amber-400 transition-colors">
+          </div>
+
+          <div>
+            <label for="email" class="block text-sm font-medium text-slate-300 mb-1">Correo electrónico</label>
+            <input type="email" id="email" placeholder="correo@ejemplo.com"
+                   class="w-full bg-slate-900 border border-slate-700 text-white rounded-lg px-4 py-2.5 text-sm placeholder:text-slate-500 focus:outline-hidden focus:ring-2 focus:ring-amber-400 focus:border-amber-400 transition-colors">
+            <p class="text-xs text-slate-500 mt-1">Enviaremos la confirmación a este correo.</p>
+          </div>
+
+          <div>
+            <label for="telefono" class="block text-sm font-medium text-slate-300 mb-1">Teléfono</label>
+            <input type="tel" id="telefono" placeholder="300 123 4567"
+                   class="w-full bg-slate-900 border border-slate-700 text-white rounded-lg px-4 py-2.5 text-sm placeholder:text-slate-500 focus:outline-hidden focus:ring-2 focus:ring-amber-400 focus:border-amber-400 transition-colors">
+          </div>
+
+          <div>
+            <label for="ruta" class="block text-sm font-medium text-slate-300 mb-1">Ruta</label>
+            <select id="ruta"
+                    class="w-full bg-slate-900 border border-slate-700 text-white rounded-lg px-4 py-2.5 text-sm focus:outline-hidden focus:ring-2 focus:ring-amber-400 focus:border-amber-400 transition-colors">
+              <option value="">Selecciona una ruta</option>
+              <option value="luces">Luces del Centro — $55.000</option>
+              <option value="cerros">Cerros y Miradores — $70.000</option>
+              <option value="rio">Río y Parques — $60.000</option>
+            </select>
+          </div>
+
+          <button type="submit"
+                  class="w-full bg-amber-400 text-slate-900 font-semibold px-6 py-3 rounded-full hover:bg-amber-300 focus:outline-hidden focus:ring-2 focus:ring-amber-200 transition-colors">
+            Confirmar inscripción
+          </button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800">
+    <div class="max-w-5xl mx-auto px-6 py-10 flex justify-between items-start">
+
+      <div>
+        <p class="text-lg font-bold text-white mb-2">Rueda Libre</p>
+        <p class="text-sm text-slate-500">Medellín, Colombia</p>
+        <p class="text-sm text-slate-500">info@ruedalibre.co</p>
+      </div>
+
+      <div>
+        <p class="text-sm font-semibold text-slate-300 mb-2">Secciones</p>
+        <nav class="flex flex-col gap-1">
+          <a href="#rutas" class="text-sm text-slate-500 hover:text-white transition-colors">Rutas</a>
+          <a href="#como-funciona" class="text-sm text-slate-500 hover:text-white transition-colors">Cómo funciona</a>
+          <a href="#inscripcion" class="text-sm text-slate-500 hover:text-white transition-colors">Inscríbete</a>
+        </nav>
+      </div>
+
+      <div>
+        <p class="text-sm font-semibold text-slate-300 mb-2">Redes</p>
+        <nav class="flex flex-col gap-1">
+          <a href="#" class="text-sm text-slate-500 hover:text-white transition-colors">Instagram</a>
+          <a href="#" class="text-sm text-slate-500 hover:text-white transition-colors">Facebook</a>
+          <a href="#" class="text-sm text-slate-500 hover:text-white transition-colors">WhatsApp</a>
+        </nav>
+      </div>
 
     </div>
-  </section>
-
-  <!-- Card -->
-  <section class="max-w-2xl mx-auto px-6 pb-8">
-    <h3 class="text-lg font-semibold text-slate-300 mb-4">Card</h3>
-
-    <article class="max-w-sm bg-white border border-slate-200 rounded-xl shadow-md overflow-hidden transition-shadow hover:shadow-xl mb-12">
-      <img class="w-full h-48 object-cover"
-           src="https://picsum.photos/seed/luces/640/320"
-           alt="Ciclistas recorriendo el centro de Medellín de noche">
-
-      <div class="p-5 space-y-3">
-        <span class="inline-block bg-emerald-100 text-emerald-800 text-xs font-semibold px-2 py-1 rounded-full">
-          Fácil
-        </span>
-
-        <h4 class="text-xl font-bold text-slate-900">Luces del Centro</h4>
-
-        <dl class="grid grid-cols-3 gap-2">
-          <div>
-            <dt class="text-xs text-slate-500">Distancia</dt>
-            <dd class="font-semibold">10 km</dd>
-          </div>
-          <div>
-            <dt class="text-xs text-slate-500">Duración</dt>
-            <dd class="font-semibold">2 h</dd>
-          </div>
-          <div>
-            <dt class="text-xs text-slate-500">Punto de encuentro</dt>
-            <dd class="font-semibold">Sede de Rueda Libre</dd>
-          </div>
-        </dl>
-
-        <p class="text-2xl font-bold text-slate-900">$55.000</p>
-
-        <a href="#inscripcion"
-           class="block text-center bg-amber-400 text-slate-900 font-semibold px-6 py-3 rounded-full hover:bg-amber-300 focus:outline-hidden focus:ring-2 focus:ring-amber-200 transition-colors">
-          Inscríbete
-        </a>
-      </div>
-    </article>
-  </section>
-
-  <!-- Alertas -->
-  <section class="max-w-2xl mx-auto px-6 pb-8">
-    <h3 class="text-lg font-semibold text-slate-300 mb-4">Alertas</h3>
-
-    <div class="space-y-3 mb-12">
-      <!-- Éxito -->
-      <div class="flex items-start gap-3 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-lg p-4">
-        <span class="text-emerald-600 text-lg leading-none" aria-hidden="true">✓</span>
-        <p class="text-sm text-emerald-800">Tu inscripción fue registrada con éxito. Recibirás un correo de confirmación.</p>
-      </div>
-
-      <!-- Advertencia -->
-      <div class="flex items-start gap-3 bg-amber-50 border-l-4 border-amber-500 rounded-r-lg p-4">
-        <span class="text-amber-600 text-lg leading-none" aria-hidden="true">⚠</span>
-        <p class="text-sm text-amber-800">Quedan pocos cupos para la ruta «Luces del Centro». Inscríbete pronto.</p>
-      </div>
-
-      <!-- Error -->
-      <div class="flex items-start gap-3 bg-red-50 border-l-4 border-red-500 rounded-r-lg p-4">
-        <span class="text-red-600 text-lg leading-none" aria-hidden="true">✕</span>
-        <p class="text-sm text-red-800">No pudimos procesar tu inscripción. Revisá los datos e intentá de nuevo.</p>
-      </div>
+    <div class="border-t border-slate-800">
+      <p class="max-w-5xl mx-auto px-6 py-4 text-xs text-slate-600 text-center">&copy; 2026 Rueda Libre. Todos los derechos reservados.</p>
     </div>
-  </section>
-
-  <!-- Inputs -->
-  <section class="max-w-2xl mx-auto px-6 pb-16">
-    <h3 class="text-lg font-semibold text-slate-300 mb-4">Inputs</h3>
-
-    <div class="max-w-sm space-y-5">
-      <!-- Input básico -->
-      <div>
-        <label for="nombre" class="block text-sm font-medium text-slate-300 mb-1">Nombre completo</label>
-        <input type="text" id="nombre" placeholder="Ej: María López"
-               class="w-full bg-slate-900 border border-slate-700 text-white rounded-lg px-4 py-2.5 text-sm placeholder:text-slate-500 focus:outline-hidden focus:ring-2 focus:ring-amber-400 focus:border-amber-400 transition-colors">
-      </div>
-
-      <!-- Input con texto de ayuda -->
-      <div>
-        <label for="email" class="block text-sm font-medium text-slate-300 mb-1">Correo electrónico</label>
-        <input type="email" id="email" placeholder="correo@ejemplo.com"
-               class="w-full bg-slate-900 border border-slate-700 text-white rounded-lg px-4 py-2.5 text-sm placeholder:text-slate-500 focus:outline-hidden focus:ring-2 focus:ring-amber-400 focus:border-amber-400 transition-colors">
-        <p class="text-xs text-slate-500 mt-1">Enviaremos la confirmación a este correo.</p>
-      </div>
-
-      <!-- Input con error -->
-      <div>
-        <label for="telefono" class="block text-sm font-medium text-slate-300 mb-1">Teléfono</label>
-        <input type="tel" id="telefono" value="abc" aria-describedby="tel-error"
-               class="w-full bg-slate-900 border border-red-500 text-white rounded-lg px-4 py-2.5 text-sm focus:outline-hidden focus:ring-2 focus:ring-red-400 focus:border-red-400 transition-colors">
-        <p id="tel-error" class="text-xs text-red-400 mt-1">Ingresá solo números (10 dígitos).</p>
-      </div>
-    </div>
-  </section>
+  </footer>
 
 </body>
 </html>
