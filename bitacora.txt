@@ -530,3 +530,18 @@ Kit de botones (3 variantes):
 
   Los tres comparten: font-semibold, px-6 py-3, rounded-full, transition-colors.
   Cada estado (hover, focus) se define con prefijos directos en el HTML.
+
+--- MiniReto 3: Card de la ruta «Luces del Centro» ---
+
+Estructura de la card:
+  - <article> con border, rounded-xl, shadow-md, overflow-hidden
+  - Imagen: w-full h-48 object-cover (ancho completo, alto fijo, recorte)
+  - Etiqueta de nivel: <span> con bg-emerald-100, text-emerald-800, rounded-full
+  - Datos: <dl> con grid grid-cols-3 — dt en text-xs text-slate-500 (label),
+    dd en font-semibold (valor). Pares: Distancia/10km, Duración/2h, Punto/Sede
+  - Precio: text-2xl font-bold
+  - Botón: reutiliza el estilo principal del kit (MR2)
+  - Hover: transition-shadow hover:shadow-xl (sombra crece sin mover contenido)
+
+Decisión semántica: usé <dl> (definition list) para los datos de la ruta
+  porque son pares etiqueta-valor, no una lista simple ni un párrafo.
