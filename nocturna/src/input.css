@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+@theme {
+  --color-farol: #FFD166;
+  --color-farol-light: #FFE29A;
+  --color-noche: #0F172A;
+  --color-cielo: #1E293B;
+  --color-niebla: #94A3B8;
+  --color-humo: #64748B;
+  --color-luna: #F8FAFC;
+}
