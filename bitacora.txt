@@ -618,3 +618,86 @@ Conceptos clave:
   - sm: NO es "para móviles" — sin prefijo lo es
   - Paso intermedio (sm:grid-cols-2) aprovecha el rango tablet sin desperdiciar
     espacio entre mobile y desktop
+
+================================================================================
+MR7 — Tema de marca y modo oscuro (S3 Día 2)
+================================================================================
+
+Objetivo: definir tokens de marca con @theme y agregar dark mode.
+
+@theme en src/input.css — tokens de marca:
+  --color-farol: #FFD166      (amarillo principal — CTA, acentos)
+  --color-farol-light: #FFE29A (hover del botón)
+  --color-noche: #0F172A      (fondo oscuro, texto en claro)
+  --color-cielo: #1E293B      (cards en dark mode)
+  --color-niebla: #94A3B8     (texto secundario en dark)
+  --color-humo: #64748B       (texto secundario en claro)
+  --color-luna: #F8FAFC       (fondo claro, texto en oscuro)
+
+  @theme genera utilidades automáticas: bg-farol, text-noche, dark:bg-cielo, etc.
+  Cambiar toda la paleta es editar un solo bloque.
+
+Dark mode con dark: variant:
+  - body: bg-luna dark:bg-noche — fondo claro por defecto, oscuro si el sistema
+    del usuario lo prefiere
+  - Cards: bg-white dark:bg-cielo — fondo diferenciado
+  - Textos: text-noche dark:text-luna, text-humo dark:text-niebla
+  - Transición: transition-colors para cambio suave
+
+  dark: sigue prefers-color-scheme: dark del navegador/sistema. No es un toggle
+  manual — cambia automáticamente según la preferencia del usuario.
+
+Decisión: badges de nivel (emerald=fácil, amber=moderada) NO se cambiaron a
+  tokens de marca porque son colores semánticos que transmiten significado
+  (verde=fácil, ámbar=moderada), no identidad de marca.
+
+Contraste inputs: los inputs usan bg-slate-100 (no bg-luna) para diferenciarse
+  visualmente del fondo bg-luna del body. Sin ese contraste, los campos se
+  confundirían con el fondo de la página.
+
+================================================================================
+MR8 — @apply con moderación y justificación de framework (S3 Día 2)
+================================================================================
+
+Objetivo: extraer clases repetidas con @apply y documentar la elección de
+  framework para el proyecto modular.
+
+Clases creadas con @apply en src/input.css:
+
+  .btn-farol:
+    @apply bg-farol text-noche font-semibold rounded-full
+           hover:bg-farol-light focus:outline-hidden focus:ring-2
+           focus:ring-farol-light transition-colors
+    Aparece 6 veces en el HTML (nav CTA, hero, 3 cards, formulario).
+    rounded-full: forma de píldora — destaca como Call to Action.
+
+  .input-field:
+    @apply w-full bg-slate-100 dark:bg-cielo border border-slate-300
+           dark:border-slate-700 text-noche dark:text-luna rounded-lg
+           px-4 py-2.5 text-sm placeholder:text-humo focus:outline-hidden
+           focus:ring-2 focus:ring-farol focus:border-farol transition-colors
+    Aparece 4 veces (nombre, email, teléfono, select ruta).
+    rounded-lg: esquinas suaves — forma rectangular esperada para campos de texto.
+
+  Regla: @apply solo para bloques exactamente iguales que se repiten muchas veces.
+  Los links del nav comparten estilos pero son pocos y no idénticos — no justifica
+  una clase @apply. Abusar de @apply convierte Tailwind en CSS tradicional y pierde
+  la ventaja de utility-first.
+
+  Diferencia rounded-full vs rounded-lg: convención UX. Botones redondos = acción
+  (llaman la atención). Inputs rectangulares = escritura (la gente espera esa forma
+  para escribir; un input rounded-full parecería un botón y confundiría al usuario).
+
+FRAMEWORK.md — justificación Bootstrap vs Tailwind:
+  Archivo nuevo: nocturna/FRAMEWORK.md
+  Veredicto: Tailwind CSS para el proyecto modular.
+  Razones: control de diseño, brand theming con @theme, dark mode nativo con dark:,
+  CSS output optimizado (solo clases usadas), responsive inline con prefijos.
+  Cuándo Bootstrap: prototipado rápido, equipo familiarizado, componentes con JS
+  (modals, carousels, dropdowns) que Tailwind no incluye.
+
+Cómo sabe Tailwind qué CSS generar:
+  Tailwind CLI escanea los archivos fuente (.html, .js, etc.) buscando nombres de
+  clase en el markup. Si bg-farol aparece en index.html, genera esa regla en
+  output.css. Si bg-red-500 nunca se usa, no la genera. En v4 la detección es
+  automática; en v3 había que configurar content paths en tailwind.config.js.
