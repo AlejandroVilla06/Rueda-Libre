@@ -179,38 +179,91 @@
       </ol>
     </section>
 
-    <!-- Inscripción -->
     <section id="inscripcion" class="max-w-5xl mx-auto px-6 py-16">
-      <div class="max-w-lg mx-auto text-center">
-        <h2 class="text-3xl font-bold text-noche dark:text-luna mb-4">Reserva tu cupo</h2>
-        <p class="text-humo dark:text-niebla mb-8">Completa tus datos y te enviamos la confirmación por correo.</p>
+      <div class="max-w-2xl mx-auto">
+        <h2 class="text-3xl font-bold text-noche dark:text-luna text-center mb-4">Reserva tu cupo</h2>
+        <p class="text-humo dark:text-niebla text-center mb-8">Completa tus datos y te enviamos la confirmación por correo.</p>
 
-        <form class="space-y-5 text-left">
-          <div>
-            <label for="nombre" class="block text-sm font-medium text-humo dark:text-niebla mb-1">Nombre completo</label>
-            <input type="text" id="nombre" placeholder="Ej: María López" class="input-field">
-          </div>
+        <form class="space-y-8">
 
-          <div>
-            <label for="email" class="block text-sm font-medium text-humo dark:text-niebla mb-1">Correo electrónico</label>
-            <input type="email" id="email" placeholder="correo@ejemplo.com" class="input-field">
-            <p class="text-xs text-humo mt-1">Enviaremos la confirmación a este correo.</p>
-          </div>
+          <fieldset class="space-y-5 border border-slate-200 dark:border-slate-700 rounded-xl p-6">
+            <legend class="text-lg font-semibold text-noche dark:text-luna px-2">Datos personales</legend>
 
-          <div>
-            <label for="telefono" class="block text-sm font-medium text-humo dark:text-niebla mb-1">Teléfono</label>
-            <input type="tel" id="telefono" placeholder="300 123 4567" class="input-field">
-          </div>
+            <div>
+              <label for="nombre" class="block text-sm font-medium text-humo dark:text-niebla mb-1">Nombre completo</label>
+              <input type="text" id="nombre" placeholder="Ej: María López" required minlength="3" class="input-field">
+            </div>
 
-          <div>
-            <label for="ruta" class="block text-sm font-medium text-humo dark:text-niebla mb-1">Ruta</label>
-            <select id="ruta" class="input-field">
-              <option value="">Selecciona una ruta</option>
-              <option value="luces">Luces del Centro — $55.000</option>
-              <option value="cerros">Cerros y Miradores — $70.000</option>
-              <option value="rio">Río y Parques — $60.000</option>
-            </select>
-          </div>
+            <div>
+              <label for="email" class="block text-sm font-medium text-humo dark:text-niebla mb-1">Correo electrónico</label>
+              <input type="email" id="email" placeholder="correo@ejemplo.com" required class="input-field">
+              <p class="text-xs text-humo mt-1">Enviaremos la confirmación a este correo.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div>
+                <label for="telefono" class="block text-sm font-medium text-humo dark:text-niebla mb-1">Celular</label>
+                <input type="tel" id="telefono" placeholder="3001234567" required pattern="3[0-9]{9}" title="10 dígitos, empieza por 3" class="input-field">
+              </div>
+              <div>
+                <label for="acompanantes" class="block text-sm font-medium text-humo dark:text-niebla mb-1">Acompañantes</label>
+                <input type="number" id="acompanantes" min="0" max="3" value="0" required class="input-field">
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="space-y-5 border border-slate-200 dark:border-slate-700 rounded-xl p-6">
+            <legend class="text-lg font-semibold text-noche dark:text-luna px-2">Tu recorrido</legend>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div>
+                <label for="ruta" class="block text-sm font-medium text-humo dark:text-niebla mb-1">Ruta</label>
+                <select id="ruta" required class="input-field">
+                  <option value="">Selecciona una ruta</option>
+                  <option value="luces">Luces del Centro — $55.000</option>
+                  <option value="cerros">Cerros y Miradores — $70.000</option>
+                  <option value="rio">Río y Parques — $60.000</option>
+                </select>
+              </div>
+              <div>
+                <label for="dia" class="block text-sm font-medium text-humo dark:text-niebla mb-1">Día de salida</label>
+                <select id="dia" required class="input-field">
+                  <option value="">Selecciona un día</option>
+                  <option value="jueves">Jueves</option>
+                  <option value="viernes">Viernes</option>
+                  <option value="sabado">Sábado</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <p class="text-sm font-medium text-humo dark:text-niebla mb-2">Nivel de experiencia</p>
+              <div class="flex flex-col sm:flex-row gap-4">
+                <label class="flex items-center gap-2 text-sm text-noche dark:text-luna cursor-pointer">
+                  <input type="radio" name="nivel" value="principiante" required class="accent-farol">
+                  Principiante
+                </label>
+                <label class="flex items-center gap-2 text-sm text-noche dark:text-luna cursor-pointer">
+                  <input type="radio" name="nivel" value="intermedio" class="accent-farol">
+                  Intermedio
+                </label>
+                <label class="flex items-center gap-2 text-sm text-noche dark:text-luna cursor-pointer">
+                  <input type="radio" name="nivel" value="avanzado" class="accent-farol">
+                  Avanzado
+                </label>
+              </div>
+            </div>
+
+            <label class="flex items-center gap-2 text-sm text-noche dark:text-luna cursor-pointer">
+              <input type="checkbox" name="bici-propia" class="accent-farol">
+              Tengo bicicleta propia
+            </label>
+          </fieldset>
+
+          <label class="flex items-start gap-2 text-sm text-humo dark:text-niebla cursor-pointer">
+            <input type="checkbox" required class="accent-farol mt-0.5">
+            Acepto las condiciones del recorrido y la política de datos personales.
+          </label>
 
           <button type="submit" class="btn-farol w-full px-6 py-3">
             Confirmar inscripción
