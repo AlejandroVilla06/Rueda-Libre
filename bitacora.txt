@@ -571,3 +571,50 @@ Componentes nuevos añadidos al kit (index.html):
     - aria-describedby en el input con error: vincula programáticamente el input
       con su mensaje de error para lectores de pantalla
     - focus:outline-hidden (Tailwind v4) en vez de outline-none
+
+================================================================================
+MR5 — Landing maquetada con el kit (S3 Día 2)
+================================================================================
+
+Objetivo: construir la landing completa de Rueda Nocturna con secciones reales
+usando los componentes del kit.
+
+Secciones creadas:
+  - Header: logo + nav con anchors (#rutas, #como-funciona, #inscripcion) + CTA
+  - Hero: badge, h1, subtítulo, stats (3 columnas flex), CTA principal
+  - Rutas: grid grid-cols-3 con 3 <article>, cada uno con imagen, badge de
+    nivel, <dl> para datos (distancia/duración/encuentro), precio y CTA
+  - Cómo funciona: <ol> con grid grid-cols-4, 4 pasos con círculos numerados
+  - Inscripción: formulario centrado (max-w-lg mx-auto) con inputs para nombre,
+    email, teléfono y select para ruta
+  - Footer: flex justify-between con 3 bloques (datos, secciones, redes) +
+    barra de copyright
+
+Decisiones:
+  - <article> para cada ruta: contenido independiente con sentido propio
+  - <dl> para datos tabulares: pares clave-valor (distancia/duración/encuentro)
+  - <ol> para pasos: orden importa, el navegador lo enumera semánticamente
+  - max-w-5xl mx-auto px-6 como contenedor consistente en todas las secciones
+  - Formulario dentro de max-w-lg para que no se estire en pantallas grandes
+  - Anchor navigation: href="#id" conecta nav con cada section id
+
+================================================================================
+MR6 — Landing responsive mobile-first (S3 Día 2)
+================================================================================
+
+Objetivo: adaptar la landing a todas las pantallas con enfoque mobile-first.
+
+Cambios aplicados:
+  - Header nav: hidden md:flex — oculto en mobile, visible desde 768px
+  - Hero h1: text-3xl base → md:text-5xl — tamaño proporcional a la pantalla
+  - Hero stats: flex-col base → sm:flex-row — apilados en mobile, fila desde 640px
+  - Rutas grid: grid-cols-1 → sm:grid-cols-2 → lg:grid-cols-3
+  - Pasos grid: grid-cols-1 → sm:grid-cols-2 → lg:grid-cols-4
+  - Footer: flex-col gap-8 base → md:flex-row md:justify-between
+
+Conceptos clave:
+  - Mobile-first: estilos base sin prefijo son para mobile (0px+)
+  - Breakpoints son min-width: sm: desde 640px, md: desde 768px, lg: desde 1024px
+  - sm: NO es "para móviles" — sin prefijo lo es
+  - Paso intermedio (sm:grid-cols-2) aprovecha el rango tablet sin desperdiciar
+    espacio entre mobile y desktop
