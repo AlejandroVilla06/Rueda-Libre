@@ -10,11 +10,13 @@
 
   <!-- Header -->
   <header class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-    <a href="#inicio" class="text-xl font-bold text-noche dark:text-luna">Rueda Nocturna</a>
+    <!-- MR10: logo apunta al sitio principal Bootstrap (sube un nivel desde nocturna/) -->
+    <a href="../index.html" class="text-xl font-bold text-noche dark:text-luna">Rueda Nocturna</a>
 
     <nav class="hidden md:flex items-center gap-8">
       <a href="#rutas" class="text-sm text-humo dark:text-niebla hover:text-noche dark:hover:text-luna transition-colors">Rutas</a>
       <a href="#como-funciona" class="text-sm text-humo dark:text-niebla hover:text-noche dark:hover:text-luna transition-colors">Cómo funciona</a>
+      <a href="#planes" class="text-sm text-humo dark:text-niebla hover:text-noche dark:hover:text-luna transition-colors">Planes</a>
       <a href="#inscripcion" class="btn-farol inline-block px-5 py-2 text-sm">
         Inscríbete
       </a>
@@ -179,6 +181,66 @@
       </ol>
     </section>
 
+    <section id="planes" class="max-w-5xl mx-auto px-6 py-16">
+      <h2 class="text-3xl font-bold text-noche dark:text-luna text-center mb-4">Planes Rueda Nocturna</h2>
+      <p class="text-humo dark:text-niebla text-center mb-10">Elegí el plan que mejor se ajuste a tu grupo.</p>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+
+        <!-- Plan Individual -->
+        <article class="flex flex-col bg-white dark:bg-cielo border border-slate-200 dark:border-slate-700 rounded-xl shadow-md p-6">
+          <h3 class="text-xl font-bold text-noche dark:text-luna mb-1">Individual</h3>
+          <p class="text-3xl font-extrabold text-noche dark:text-luna mb-1">$55.000</p>
+          <p class="text-sm text-humo dark:text-niebla mb-6">por persona</p>
+          <ul class="space-y-2 text-sm text-humo dark:text-niebla flex-1">
+            <li>Bicicleta + casco</li>
+            <li>Luces LED + chaleco reflectivo</li>
+            <li>Guía certificado</li>
+            <li>Hidratación en ruta</li>
+          </ul>
+          <a href="#inscripcion" class="btn-farol block text-center px-6 py-3 mt-6">
+            Inscríbete
+          </a>
+        </article>
+
+        <!-- Plan Pareja (destacado) -->
+        <article class="relative flex flex-col bg-farol/5 dark:bg-farol/10 border-2 border-farol rounded-xl shadow-lg p-6">
+          <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-farol text-noche text-xs font-bold px-4 py-1 rounded-full">
+            Más elegido
+          </span>
+          <h3 class="text-xl font-bold text-noche dark:text-luna mb-1 mt-2">Pareja</h3>
+          <p class="text-3xl font-extrabold text-noche dark:text-luna mb-1">$99.000</p>
+          <p class="text-sm text-humo dark:text-niebla mb-6">las dos personas</p>
+          <ul class="space-y-2 text-sm text-humo dark:text-niebla flex-1">
+            <li>Todo lo del plan Individual</li>
+            <li>Foto profesional del recorrido</li>
+            <li>Snack para compartir</li>
+            <li>Prioridad en inscripción</li>
+          </ul>
+          <a href="#inscripcion" class="btn-farol block text-center px-6 py-3 mt-6">
+            Inscríbete
+          </a>
+        </article>
+
+        <!-- Plan Grupo -->
+        <article class="flex flex-col bg-white dark:bg-cielo border border-slate-200 dark:border-slate-700 rounded-xl shadow-md p-6">
+          <h3 class="text-xl font-bold text-noche dark:text-luna mb-1">Grupo</h3>
+          <p class="text-3xl font-extrabold text-noche dark:text-luna mb-1">$45.000</p>
+          <p class="text-sm text-humo dark:text-niebla mb-6">por persona · 4 a 8 personas</p>
+          <ul class="space-y-2 text-sm text-humo dark:text-niebla flex-1">
+            <li>Todo lo del plan Individual</li>
+            <li>Guía exclusivo para el grupo</li>
+            <li>Horario a elección</li>
+            <li>Fotos del grupo</li>
+          </ul>
+          <a href="#inscripcion" class="btn-farol block text-center px-6 py-3 mt-6">
+            Inscríbete
+          </a>
+        </article>
+
+      </div>
+    </section>
+
     <section id="inscripcion" class="max-w-5xl mx-auto px-6 py-16">
       <div class="max-w-2xl mx-auto">
         <h2 class="text-3xl font-bold text-noche dark:text-luna text-center mb-4">Reserva tu cupo</h2>
@@ -281,7 +343,7 @@
       <div>
         <p class="text-lg font-bold text-noche dark:text-luna mb-2">Rueda Libre</p>
         <p class="text-sm text-humo">Medellín, Colombia</p>
-        <p class="text-sm text-humo">info@ruedalibre.co</p>
+        <p class="text-sm text-humo">hola@ruedalibre.com</p>
       </div>
 
       <div>
@@ -289,7 +351,10 @@
         <nav class="flex flex-col gap-1">
           <a href="#rutas" class="text-sm text-humo hover:text-noche dark:hover:text-luna transition-colors">Rutas</a>
           <a href="#como-funciona" class="text-sm text-humo hover:text-noche dark:hover:text-luna transition-colors">Cómo funciona</a>
+          <a href="#planes" class="text-sm text-humo hover:text-noche dark:hover:text-luna transition-colors">Planes</a>
           <a href="#inscripcion" class="text-sm text-humo hover:text-noche dark:hover:text-luna transition-colors">Inscríbete</a>
+          <!-- MR10: enlace al sistema de reservas del sitio principal (sube un nivel desde nocturna/) -->
+          <a href="../paginas/reservas.html" class="text-sm text-farol font-semibold hover:text-noche dark:hover:text-luna transition-colors">Reserva tu bici</a>
         </nav>
       </div>
 
