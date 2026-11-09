@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <!-- MR10: expand-md para consistencia con index.html -->
+    <nav class="navbar navbar-expand-md bg-body-tertiary">
         <div class="container">
             <a class="navbar-brand marca-rueda" href="../index.html"><i class="bi bi-bicycle" aria-hidden="true"></i> Rueda Libre</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
@@ -22,6 +23,8 @@
                     <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="tarifas.html">Tarifas y rutas</a></li>
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="reservas.html">Reservas</a></li>
+                    <!-- MR10: ruta relativa sube un nivel desde paginas/ hacia nocturna/ -->
+                    <li class="nav-item align-self-center mt-2 mt-md-0"><a class="btn btn-sm btn-naranja ms-md-2" href="../nocturna/index.html">Rueda Nocturna</a></li>
                 </ul>
             </div>
         </div>
