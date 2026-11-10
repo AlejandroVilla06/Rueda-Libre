@@ -33,7 +33,7 @@
     <main class="container">
         <div class="row g-4">
             <section class="col-12 col-md-8">
-                <h2>Reserva tu bicicleta</h2>
+                <h1>Reserva tu bicicleta</h1>
 
                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
                     Recuerda traer tu documento de identidad original al recoger la bicicleta.
@@ -87,7 +87,7 @@
                         <input type="checkbox" class="form-check-input" id="politicas" required>
                         <label class="form-check-label" for="politicas">
                             Acepto las
-                            <button type="button" class="btn btn-link p-0 align-baseline" data-bs-toggle="modal" data-bs-target="#modalPoliticas">políticas de alquiler</button>
+                            <a href="#" role="button" class="link-primary text-decoration-underline" data-bs-toggle="modal" data-bs-target="#modalPoliticas">políticas de alquiler</a>
                         </label>
                         <div class="invalid-feedback">Debes aceptar las políticas para continuar.</div>
                     </div>
@@ -134,11 +134,11 @@
 
     <a href="https://wa.me/573000000000" target="_blank" class="btn-whatsapp" aria-label="Contactar por WhatsApp"><i class="bi bi-whatsapp" aria-hidden="true"></i> WhatsApp</a>
 
-    <div class="modal fade" id="modalPoliticas" tabindex="-1" aria-labelledby="modalPoliticasLabel" aria-hidden="true">
+    <div class="modal fade" id="modalPoliticas" tabindex="-1" role="dialog" aria-labelledby="modalPoliticasLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="modalPoliticasLabel">Políticas de alquiler</h5>
+                    <h2 class="modal-title" id="modalPoliticasLabel">Políticas de alquiler</h2>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                 </div>
                 <div class="modal-body">
