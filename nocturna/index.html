@@ -301,29 +301,29 @@
             <div>
               <p class="text-sm font-medium text-humo dark:text-niebla mb-2">Nivel de experiencia</p>
               <div class="flex flex-col sm:flex-row gap-4">
-                <label class="flex items-center gap-2 text-sm text-noche dark:text-luna cursor-pointer">
-                  <input type="radio" name="nivel" value="principiante" required class="accent-farol">
+                <label for="nivel-principiante" class="flex items-center gap-2 text-sm text-noche dark:text-luna cursor-pointer">
+                  <input type="radio" name="nivel" id="nivel-principiante" value="principiante" required class="accent-farol">
                   Principiante
                 </label>
-                <label class="flex items-center gap-2 text-sm text-noche dark:text-luna cursor-pointer">
-                  <input type="radio" name="nivel" value="intermedio" class="accent-farol">
+                <label for="nivel-intermedio" class="flex items-center gap-2 text-sm text-noche dark:text-luna cursor-pointer">
+                  <input type="radio" name="nivel" id="nivel-intermedio" value="intermedio" class="accent-farol">
                   Intermedio
                 </label>
-                <label class="flex items-center gap-2 text-sm text-noche dark:text-luna cursor-pointer">
-                  <input type="radio" name="nivel" value="avanzado" class="accent-farol">
+                <label for="nivel-avanzado" class="flex items-center gap-2 text-sm text-noche dark:text-luna cursor-pointer">
+                  <input type="radio" name="nivel" id="nivel-avanzado" value="avanzado" class="accent-farol">
                   Avanzado
                 </label>
               </div>
             </div>
 
-            <label class="flex items-center gap-2 text-sm text-noche dark:text-luna cursor-pointer">
-              <input type="checkbox" name="bici-propia" class="accent-farol">
+            <label for="own-bike" class="flex items-center gap-2 text-sm text-noche dark:text-luna cursor-pointer">
+              <input type="checkbox" name="bici-propia" id="own-bike" class="accent-farol">
               Tengo bicicleta propia
             </label>
           </fieldset>
 
-          <label class="flex items-start gap-2 text-sm text-humo dark:text-niebla cursor-pointer">
-            <input type="checkbox" required class="accent-farol mt-0.5">
+          <label for="accept-terms" class="flex items-start gap-2 text-sm text-humo dark:text-niebla cursor-pointer">
+            <input type="checkbox" id="accept-terms" required class="accent-farol mt-0.5">
             Acepto las condiciones del recorrido y la política de datos personales.
           </label>
 
