@@ -14,11 +14,11 @@
     <!-- MR10: expand-md para que el link "Rueda Nocturna" sea visible desde 768px -->
     <nav class="navbar navbar-expand-md bg-body-tertiary">
         <div class="container">
-            <a class="navbar-brand marca-rueda" href="index.html"><i class="bi bi-bicycle" aria-hidden="true"></i> Rueda Libre</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
+            <a class="navbar-brand brand-logo" href="index.html"><i class="bi bi-bicycle" aria-hidden="true"></i> Rueda Libre</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Abrir menú">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="menuPrincipal">
+            <div class="collapse navbar-collapse" id="main-menu">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="paginas/tarifas.html">Tarifas y rutas</a></li>
@@ -32,7 +32,9 @@
 
     <main class="container">
 
-        <section class="row align-items-center py-4 portada">
+        <h1 class="visually-hidden">Rueda Libre — Alquiler de bicicletas en Medellín</h1>
+
+        <section class="row align-items-center py-4 hero">
             <div class="col-12 col-md-6">
                 <h2>¿Quienes somos?</h2>
                 <p>Somos una empresa de <strong>alquiler de bicicletas en Medellín</strong> que promueve la movilidad sostenible y el turismo activo en el Valle de Aburrá.</p>
@@ -44,22 +46,22 @@
 
         <section class="mb-4">
             <h2>Nuestros Servicios</h2>
-            <div class="tarjeta tarjeta-destacada">
-                <span class="etiqueta-nuevo">Nuevo</span>
+            <div class="service-card featured-card">
+                <span class="badge-new">Nuevo</span>
                 <h3>Alquiler de bicicletas</h3>
                 <p>Bicicletas urbanas y de montaña por horas o por día. <strong>Incluye casco y candado</strong> en todos los planes.</p>
                 <a href="paginas/tarifas.html" class="btn btn-outline-primary">Ver tarifas</a>
                 <a href="paginas/reservas.html" class="btn btn-primary">Reservar ahora</a>
             </div>
 
-            <div class="tarjeta">
+            <div class="service-card">
                 <h3>Recorridos guiados</h3>
                 <p>Rutas por los mejores paisajes de Medellín con guías locales. <em>Ideal para turistas y familias</em>.</p>
                 <img src="img/RutasRecorridosGuiados.jpg" alt="Recorridos de Rueda Libre">
                 <a href="paginas/tarifas.html#recorridos" class="btn btn-outline-primary btn-sm">Ver recorridos y precios</a>
             </div>
 
-            <div class="tarjeta">
+            <div class="service-card">
                 <h3>Taller básicos</h3>
                 <p>Revisión rápida y ajustes menores para que <strong>tu bici esté siempre lista</strong>.</p>
             </div>
@@ -67,7 +69,7 @@
 
         <section class="mb-4">
             <h2>Promociones del mes</h2>
-            <div id="carruselPromos" class="carousel slide mb-4" data-bs-ride="carousel">
+            <div id="promo-carousel" class="carousel slide mb-4" data-bs-ride="carousel">
                 <div class="carousel-inner rounded-3">
                     <div class="carousel-item active">
                         <img src="img/RutasRecorridosGuiados.jpg" class="d-block w-100" alt="Martes 2x1 en bicicletas urbanas">
@@ -99,11 +101,11 @@
                         </div>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carruselPromos" data-bs-slide="prev">
+                <button class="carousel-control-prev" type="button" data-bs-target="#promo-carousel" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Anterior</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carruselPromos" data-bs-slide="next">
+                <button class="carousel-control-next" type="button" data-bs-target="#promo-carousel" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Siguiente</span>
                 </button>
@@ -247,7 +249,7 @@
     </main>
 
     <aside class="container mb-4">
-        <h2 class="seccion-titulo">Beneficios</h2>
+        <h2 class="section-title">Beneficios</h2>
         <ul class="list-unstyled">
             <li class="mb-2"><i class="bi bi-tree" aria-hidden="true"></i> Transporte ecológico y saludable</li>
             <li class="mb-2"><i class="bi bi-piggy-bank" aria-hidden="true"></i> Ahorro en transporte urbano</li>
@@ -255,7 +257,7 @@
         </ul>
     </aside>
 
-    <footer class="pie-marca mt-4">
+    <footer class="site-footer mt-4">
         <div class="container d-flex flex-column flex-md-row justify-content-between align-items-start py-4 gap-4">
             <div>
                 <h3><i class="bi bi-bicycle" aria-hidden="true"></i> Rueda Libre</h3>
